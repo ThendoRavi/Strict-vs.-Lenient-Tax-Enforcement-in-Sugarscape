@@ -35,7 +35,7 @@ patches-own [
 to setup
   clear-all
   set tax-revenue 0
-  set initial-population 100
+  set initial-population 200
   set audit-percentage 0.3
   set punishment-mode "strict"
   set punishment-duration 5
@@ -478,7 +478,7 @@ initial-population
 initial-population
 10
 1000
-100.0
+200.0
 10
 1
 NIL

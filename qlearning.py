@@ -45,26 +45,55 @@ def test_connection():
         # Step 7: Test sending simple actions
         print("\n🎮 Testing action sending...")
         # Send action 0 (pay) to all turtles
-        simple_actions = [0] * population_int  # All turtles will "pay"
+        simple_actions = [2] * population_int  # All turtles will "pay"
         action_string = "[" + " ".join(map(str, simple_actions)) + "]"
         
         print(f"� Sending actions: {action_string[:50]}...")
         netlogo.command(f'receive-actions {action_string}')
         print("✅ Actions sent successfully!")
         
-        # Step 8: Run one step
-        print("⏭️ Running one simulation step...")
-        netlogo.command('go')
-        print("✅ Simulation step complete!")
+        # Step 8: Run simulation for 100 ticks
+        print("⏭️ Running simulation for 100 ticks...")
+        num_ticks = 100
         
-        # Step 9: Check results
-        new_population = netlogo.report('get-population')
-        new_population_int = int(float(new_population))  # Convert JDouble to Python int via float
-        print(f"👥 New population: {new_population_int} turtles")
+        for tick in range(num_ticks):
+            # Send actions for this tick (all turtles will "pay")
+            current_population = netlogo.report('get-population')
+            current_population_int = int(float(current_population))
+            
+            if current_population_int == 0:
+                print(f"❌ Population died out at tick {tick}")
+                break
+            
+            # Send actions to all current turtles
+            tick_actions = [2] * current_population_int  # All turtles will "pay"
+            action_string = "[" + " ".join(map(str, tick_actions)) + "]"
+            netlogo.command(f'receive-actions {action_string}')
+            
+            # Run one step
+            netlogo.command('go')
+            
+            # Print progress every 20 ticks
+            if (tick + 1) % 20 == 0:
+                temp_population = netlogo.report('get-population')
+                temp_population_int = int(float(temp_population))
+                if temp_population_int > 0:
+                    temp_rewards = netlogo.report('report-rewards')
+                    avg_sugar = sum(temp_rewards) / len(temp_rewards)
+                    print(f"  Tick {tick + 1:3d}: Population={temp_population_int}, Avg Sugar={avg_sugar:.1f}")
         
-        if new_population_int > 0:
-            new_rewards = netlogo.report('report-rewards')
-            print(f"💰 Average sugar after step: {sum(new_rewards)/len(new_rewards):.1f}")
+        print("✅ Simulation complete!")
+        
+        # Step 9: Check final results
+        final_population = netlogo.report('get-population')
+        final_population_int = int(float(final_population))  # Convert JDouble to Python int via float
+        print(f"👥 Final population: {final_population_int} turtles")
+        
+        if final_population_int > 0:
+            final_rewards = netlogo.report('report-rewards')
+            print(f"💰 Final average sugar: {sum(final_rewards)/len(final_rewards):.1f}")
+        else:
+            print("💀 All turtles died during simulation")
         
         print("\n🎉 CONNECTION TEST SUCCESSFUL! 🎉")
         print("✅ Python can talk to NetLogo")

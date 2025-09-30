@@ -29,9 +29,9 @@ class QLearningTaxAgent:
         
     def choose_action(self, state):
         if np.random.random() < self.exploration_rate:
-            return np.random.randint(self.action_size)
+            return np.random.randint(self.action_size) #Explore
         else:
-            return np.argmax(self.q_table[state])
+            return np.argmax(self.q_table[state]) #Exploit learned strategy
             
     def update_q_table(self, state, action, reward, next_state):
         max_next = np.max(self.q_table[next_state])
@@ -59,7 +59,9 @@ class TaxSimulation:
                 raise FileNotFoundError(f"NetLogo model file '{model_file}' not found in current directory")
                 
             self.netlogo.load_model(model_file)
-            self.agent = QLearningTaxAgent(state_size=200, action_size=3)
+            # State space: 10 sugar levels × 2 punishment states × 3 history lengths = 60 states
+            # But encoding uses max index of 9*20 + 1*10 + 2 = 192, so need 193 slots (0-192)
+            self.agent = QLearningTaxAgent(state_size=193, action_size=3)
             self.results = []
             
         except Exception as e:
@@ -147,7 +149,7 @@ class TaxSimulation:
             print(f"❌ Connection test failed: {e}")
             return False
             
-    def run_episode(self, years=1, audit_rate=0.3, mode="strict", duration=5):
+    def run_episode(self, years=100, audit_rate=0.3, mode="strict", duration=5):
         """Run a single episode of the simulation"""
         try:
             # Set parameters in NetLogo
@@ -217,10 +219,25 @@ class TaxSimulation:
                 
                 # Send actions with error handling
                 try:
+                    # Double-check turtle count before sending
+                    current_turtle_count = self.netlogo.report('count turtles')
+                    current_turtle_count = int(float(current_turtle_count))
+                    
+                    if current_turtle_count != len(action_list):
+                        print(f"  Warning: Turtle count mismatch - NetLogo: {current_turtle_count}, Actions: {len(action_list)}")
+                        # Adjust action list to match current turtle count
+                        if current_turtle_count < len(action_list):
+                            action_list = action_list[:current_turtle_count]
+                        else:
+                            action_list.extend([0] * (current_turtle_count - len(action_list)))
+                        action_string = "[" + " ".join(map(str, action_list)) + "]"
+                    
                     self.netlogo.command(f'receive-actions {action_string}')
+                    
                 except Exception as e:
                     print(f"  Error sending actions: {e}")
-                    print(f"  Skipping year {year}")
+                    print(f"  Attempting to continue simulation...")
+                    # Try to continue without this year's actions
                     continue
                 
                 # Run one tick (which processes the actions)
@@ -303,7 +320,7 @@ class TaxSimulation:
             
             try:
                 # Reset Q-learning for each repetition
-                self.agent = QLearningTaxAgent(state_size=200, action_size=3)
+                self.agent = QLearningTaxAgent(state_size=193, action_size=3)
                 
                 # Run the experiment
                 results = self.run_episode(years, audit_rate, mode, duration)
@@ -437,7 +454,7 @@ def main():
     netlogo_path = None  # Auto-detect if None
     
     # Configuration
-    TEST_MODE = True  # Set to False to run full experiments
+    TEST_MODE = False  # Set to False to run full experiments
     USE_GUI = False   # Set to True to see NetLogo GUI
     
     try:
@@ -469,7 +486,7 @@ def main():
                     'audit_rate': 0.3,
                     'mode': 'strict',
                     'duration': 5,
-                    'years': 20,  # Quick test
+                    'years': 1000,  # Quick test
                     'repetitions': 1  # Single run
                 }
             ]
@@ -481,34 +498,34 @@ def main():
             experiments = [
                 {
                     'name': 'low_audit',
-                    'audit_rate': 0.1,
+                    'audit_rate': 0.3,
                     'mode': 'strict',
-                    'duration': 5,
-                    'years': 100,
+                    'duration': 20,
+                    'years': 1000,
                     'repetitions': 3
                 },
                 {
                     'name': 'medium_audit',
-                    'audit_rate': 0.3,
+                    'audit_rate': 0.5,
                     'mode': 'strict',
-                    'duration': 5,
-                    'years': 100,
+                    'duration': 20,
+                    'years': 1000,
                     'repetitions': 3
                 },
                 {
                     'name': 'high_audit',
-                    'audit_rate': 0.5,
+                    'audit_rate': 0.8,
                     'mode': 'strict',
-                    'duration': 5,
-                    'years': 100,
+                    'duration': 20,
+                    'years': 1000,
                     'repetitions': 3
                 },
                 {
                     'name': 'lenient_mode',
                     'audit_rate': 0.3,
                     'mode': 'lenient',
-                    'duration': 3,
-                    'years': 100,
+                    'duration': 5,
+                    'years': 1000,
                     'repetitions': 3
                 }
             ]

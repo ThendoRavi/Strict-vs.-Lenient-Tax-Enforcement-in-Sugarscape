@@ -231,10 +231,15 @@ end
 to receive-actions [action-list]
   let id 0
   let list-length length action-list
-  while [id < list-length and id < count turtles] [
-    let current-action item id action-list
-    ask turtle id [ set python-action current-action ]
-    set id id + 1
+  let turtle-list sort turtles  ; Get ordered list of all existing turtles
+  
+  ; Assign actions to turtles in order, skipping if we run out of actions or turtles
+  foreach turtle-list [ t ->
+    if id < list-length [
+      let current-action item id action-list
+      ask t [ set python-action current-action ]
+      set id id + 1
+    ]
   ]
   set python-action-received true
 end

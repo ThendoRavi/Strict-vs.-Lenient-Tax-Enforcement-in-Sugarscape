@@ -1,0 +1,14 @@
+{
+  "exploration_rate": 2.9560733103195325e-19,
+  "learning_rate": 0.1,
+  "discount_factor": 0.9,
+  "repetition": 1,
+  "q_table_analytics": {
+    "states_learned": 33,
+    "total_states": 193,
+    "learning_coverage": 0.17098445595854922,
+    "avg_q_value": -1.7929081511921159,
+    "max_q_value": 11.169169366944924,
+    "min_q_value": -11.185570789887999
+  }
+}

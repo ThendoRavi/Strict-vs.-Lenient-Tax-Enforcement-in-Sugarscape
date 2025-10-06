@@ -3,11 +3,6 @@ extensions [csv]
 globals [
   tax-revenue
   gini-index
-  ;initial-population
-  ;audit-percentage
-  ;punishment-mode
-  ;punishment-duration
-  ;visualization-mode
   python-action-received
 ]
 
@@ -24,6 +19,11 @@ turtles-own [
   punishment-timer
   python-action
   sugar-level
+  action-history          ; List of last N actions taken
+  punishment-history      ; List tracking which actions led to punishment
+  recent-evasion-success  ; Counter for successful evasions (not caught)
+  total-evasions          ; Total times evaded
+  compliance-streak       ; Current streak of full compliance
 ]
 
 patches-own [
@@ -36,9 +36,10 @@ to setup
   clear-all
   set tax-revenue 0
   set initial-population 200
-  set audit-percentage 0.3
-  set punishment-mode "strict"
-  set punishment-duration 5
+  ; Initialize with default values - will be overridden by Python via set-params
+  if audit-percentage = 0 [ set audit-percentage 0.3 ]
+  if punishment-mode = "" or punishment-mode = 0 [ set punishment-mode "strict" ]
+  if punishment-duration = 0 [ set punishment-duration 5 ]
   set visualization-mode "none"
   set python-action-received false
 
@@ -60,6 +61,11 @@ to turtle-setup
   set punishment-timer 0
   set compliance-history []
   set python-action 0
+  set action-history []
+  set punishment-history []
+  set recent-evasion-success 0
+  set total-evasions 0
+  set compliance-streak 0
   update-sugar-level
 
   ; Build vision points
@@ -69,12 +75,14 @@ to turtle-setup
 end
 
 to setup-patches
-  ; Create a simple sugar landscape
+  ; Load sugar landscape from file
+  file-open "sugar-map.txt"
   ask patches [
-    set max-psugar random 5 + 1
+    set max-psugar file-read
     set psugar max-psugar
     patch-recolor
   ]
+  file-close
 end
 
 ; Runtime Loop - Modified for Python control
@@ -97,16 +105,22 @@ to go
         turtle-move
         turtle-eat
       ]
+      if is-punished? [
+        ; Punished agents eat only 25% of patch sugar
+        set sugar (sugar - metabolism + (psugar * 0.25))
+        set psugar psugar * 0.75
+      ]
       if sugar <= 0 [ die ]
       update-sugar-level
     ]
 
     redistribute-tax
     do-visualization
-    tick
 
     ; Reset flag for next cycle
     set python-action-received false
+
+    tick
   ]
 end
 
@@ -132,6 +146,25 @@ to handle-tax
       set tax-paid 0
     ]
 
+    ; Record action in history (keep last 10 actions)
+    set action-history lput python-action action-history
+    if length action-history > 10 [
+      set action-history but-first action-history
+    ]
+
+    ; Track evasion attempts
+    if python-action = 2 [
+      set total-evasions total-evasions + 1
+    ]
+
+    ; Update compliance streak
+    if tax-paid = tax-due [
+      set compliance-streak compliance-streak + 1
+    ]
+    if tax-paid < tax-due [
+      set compliance-streak 0
+    ]
+
     ; Pay tax
     set sugar sugar - tax-paid
     set tax-revenue tax-revenue + tax-paid
@@ -151,20 +184,57 @@ to-report calculate-tax
 end
 
 to audit-and-punish
-  let candidates turtles with [ not is-punished? ]
-  let audited-sample n-of (audit-percentage * count candidates) candidates
-  ask audited-sample [
-    if tax-paid < tax-due [
-      if punishment-mode = "strict" [
-        set is-punished? true
-        set punishment-timer punishment-duration
-        set sugar sugar - (tax-due - tax-paid) * 2
+  ; Only audit every 50 ticks (audit frequency controlled by Python)
+  if ticks mod 50 = 0 [
+    let candidates turtles with [ not is-punished? ]
+    let audited-sample n-of (audit-percentage * count candidates) candidates
+    ask audited-sample [
+      if tax-paid < tax-due [
+        ; Record this action led to punishment
+        if length action-history > 0 [
+          let last-action last action-history
+          set punishment-history lput last-action punishment-history
+          if length punishment-history > 10 [
+            set punishment-history but-first punishment-history
+          ]
+        ]
+
+        if punishment-mode = "strict" [
+          set is-punished? true
+          set punishment-timer punishment-duration
+          set sugar sugar - (tax-due - tax-paid) * 2
+        ]
+        if punishment-mode = "lenient" [
+          set is-punished? true
+          set punishment-timer punishment-duration
+          set sugar sugar - (tax-due - tax-paid) * 0.5
+        ]
       ]
-      if punishment-mode = "lenient" [
-        set is-punished? true
-        set punishment-timer punishment-duration
-        set sugar sugar - (tax-due - tax-paid) * 0.5
+    ]
+
+    ; Track successful evasions (not audited or audited but compliant)
+    ask turtles with [ not is-punished? ] [
+      if length action-history > 0 [
+        let last-action last action-history
+        ; If last action was evasion (2) and we're not punished, it was successful
+        if last-action = 2 and not member? self audited-sample [
+          set recent-evasion-success recent-evasion-success + 1
+        ]
+        ; Also count if we were audited but had already paid (edge case)
+        if last-action = 2 and member? self audited-sample and tax-paid >= tax-due [
+          set recent-evasion-success recent-evasion-success + 1
+        ]
       ]
+
+      ; Decay recent success counter (keep last 5 successful evasions)
+      if recent-evasion-success > 5 [
+        set recent-evasion-success 5
+      ]
+    ]
+
+    ; Reset recent success for newly punished agents
+    ask turtles with [ is-punished? and punishment-timer = punishment-duration ] [
+      set recent-evasion-success 0
     ]
   ]
 end
@@ -232,7 +302,7 @@ to receive-actions [action-list]
   let id 0
   let list-length length action-list
   let turtle-list sort turtles  ; Get ordered list of all existing turtles
-  
+
   ; Assign actions to turtles in order, skipping if we run out of actions or turtles
   foreach turtle-list [ t ->
     if id < list-length [
@@ -244,12 +314,77 @@ to receive-actions [action-list]
   set python-action-received true
 end
 
+; New procedure to handle movement commands from Python DQN
+to receive-movement-commands [movement-list]
+  ; movement-list contains [turtle-id direction] pairs
+  foreach movement-list [ command ->
+    let turtle-id item 0 command
+    let direction item 1 command
+    
+    ask turtle turtle-id [
+      if not is-punished? [  ; Only move if not punished
+        execute-movement direction
+      ]
+    ]
+  ]
+end
+
+to execute-movement [direction]
+  ; Execute movement command (UP, DOWN, LEFT, RIGHT)
+  let new-x xcor
+  let new-y ycor
+  
+  if direction = "UP" [ set new-y ycor + 1 ]
+  if direction = "DOWN" [ set new-y ycor - 1 ]
+  if direction = "LEFT" [ set new-x xcor - 1 ]
+  if direction = "RIGHT" [ set new-x xcor + 1 ]
+  
+  ; Check bounds and move if valid
+  if new-x >= 0 and new-x <= 49 and new-y >= 0 and new-y <= 49 [
+    let target-patch patch new-x new-y
+    if target-patch != nobody and not any? turtles-on target-patch [
+      move-to target-patch
+    ]
+  ]
+end
+
 to-report report-states
   let result []
   ask turtles [
     let punished-status 0
     if is-punished? [ set punished-status 1 ]
-    set result lput (list who sugar-level punished-status (length compliance-history)) result
+
+    ; Calculate compliance pattern: 0 = mixed, 1 = always comply, 2 = alternate
+    let pattern 0
+    if compliance-streak >= 5 [ set pattern 1 ]  ; Always complies
+    if compliance-streak > 0 and compliance-streak < 5 and length action-history >= 3 [
+      ; Check for alternating pattern in last 3 actions
+      if length action-history >= 3 [
+        let last-3 sublist action-history (max list 0 (length action-history - 3)) (length action-history)
+        let has-variety? (length remove-duplicates last-3) > 1
+        if has-variety? [ set pattern 2 ]  ; Alternates strategies
+      ]
+    ]
+
+    ; Get last action (or -1 if no history)
+    let last-action-taken -1
+    if length action-history > 0 [
+      set last-action-taken last action-history
+    ]
+
+    ; Count actions that led to punishment (from punishment history)
+    let punishment-count length punishment-history
+
+    ; Calculate recent evasion success rate
+    let evasion-success-rate 0
+    if total-evasions > 0 [
+      set evasion-success-rate recent-evasion-success / min list total-evasions 5
+    ]
+
+    ; Return enhanced state: [id, sugar-level, punished, history-length, last-action,
+    ;                          punishment-count, evasion-success-rate, compliance-pattern, x-pos, y-pos]
+    set result lput (list who sugar-level punished-status (length compliance-history)
+                          last-action-taken punishment-count evasion-success-rate pattern xcor ycor) result
   ]
   report result
 end

@@ -1,0 +1,20 @@
+{
+  "exploration_rate": 4.633726494037594e-07,
+  "learning_rate": 0.1,
+  "discount_factor": 0.9,
+  "repetition": 1,
+  "enhanced_features": [
+    "sugar_level",
+    "punished_status",
+    "history_length",
+    "last_action",
+    "punishment_count",
+    "evasion_success_rate",
+    "compliance_pattern"
+  ],
+  "q_table_analytics": {
+    "states_learned": 297,
+    "total_states": 19200,
+    "learning_coverage": 0.01546875
+  }
+}

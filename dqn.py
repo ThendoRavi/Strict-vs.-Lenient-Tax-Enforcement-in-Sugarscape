@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for cluster
 import matplotlib.pyplot as plt
 import pynetlogo
 import tensorflow as tf
@@ -11,6 +13,9 @@ from datetime import datetime
 import json
 import os
 import time
+import argparse
+import sys
+import logging
 
 
 class DQNAgent:
@@ -766,18 +771,54 @@ def analyze_dqn_results(results):
     
     plt.tight_layout()
     plt.savefig('results/dqn_summary_plot.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    # plt.show()  # Commented out for cluster compatibility
+    plt.close()  # Close figure to free memory
     
     return summary
 
 
 def main():
     """Main execution function for DQN simulation"""
-    netlogo_path = None  # Set this if NetLogo is not in default location
+    # Parse command line arguments for cluster compatibility
+    parser = argparse.ArgumentParser(description='DQN Tax Compliance Simulation')
+    parser.add_argument('--cluster-mode', action='store_true', help='Run in cluster mode')
+    parser.add_argument('--job-id', type=str, default='local', help='Job ID for cluster runs')
+    parser.add_argument('--netlogo-path', type=str, default=None, help='Path to NetLogo installation')
+    parser.add_argument('--test-mode', action='store_true', default=True, help='Run in test mode')
+    parser.add_argument('--full-mode', action='store_true', help='Run full experiments')
     
-    TEST_MODE = True  # Set to False for full experiments
-    USE_GUI = False   # Set to True to see NetLogo visualization
-    QUICK_TEST = True  # Ultra-fast test mode
+    try:
+        args = parser.parse_args()
+    except SystemExit:
+        # If argument parsing fails (e.g., in interactive mode), use defaults
+        class DefaultArgs:
+            cluster_mode = False
+            job_id = 'local'
+            netlogo_path = None
+            test_mode = True
+            full_mode = False
+        args = DefaultArgs()
+    
+    netlogo_path = args.netlogo_path  # Set this if NetLogo is not in default location
+    
+    TEST_MODE = not args.full_mode  # Set to False for full experiments
+    USE_GUI = False   # Always False for cluster compatibility
+    QUICK_TEST = not args.full_mode  # Ultra-fast test mode unless full mode requested
+    
+    # Set up logging for cluster runs
+    if args.cluster_mode:
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(f'dqn_run_{args.job_id}.log'),
+                logging.StreamHandler(sys.stdout)
+            ]
+        )
+        logging.info(f"Starting DQN simulation in cluster mode with job ID: {args.job_id}")
+    else:
+        # Simple logging for local runs
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
     
     try:
         print("="*60)

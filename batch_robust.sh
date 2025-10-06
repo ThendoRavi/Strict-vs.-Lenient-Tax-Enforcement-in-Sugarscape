@@ -59,18 +59,53 @@ export PYTHONUNBUFFERED=1
 export TF_CPP_MIN_LOG_LEVEL=2
 export DISPLAY=""
 
-# Create and activate virtual environment
-if [ ! -d "venv" ]; then
-    echo "Creating virtual environment..."
-    $PYTHON_CMD -m venv venv
+# Check if we can create virtual environment
+echo "Checking virtual environment capabilities..."
+if $PYTHON_CMD -m venv --help > /dev/null 2>&1; then
+    echo "venv module available"
+    # Create and activate virtual environment
+    if [ ! -d "venv" ]; then
+        echo "Creating virtual environment..."
+        $PYTHON_CMD -m venv venv
+        if [ $? -ne 0 ]; then
+            echo "Failed to create virtual environment, trying without venv..."
+            USE_VENV=false
+        else
+            USE_VENV=true
+        fi
+    else
+        USE_VENV=true
+    fi
+else
+    echo "venv module not available, installing packages globally"
+    USE_VENV=false
 fi
 
-source venv/bin/activate
+# Activate virtual environment if available
+if [ "$USE_VENV" = true ] && [ -f "venv/bin/activate" ]; then
+    echo "Activating virtual environment..."
+    source venv/bin/activate
+fi
 
-# Upgrade pip and install requirements
-echo "Installing packages..."
-pip install --upgrade pip
-pip install -r requirements.txt
+# Find pip command
+PIP_CMD=""
+for cmd in pip pip3 "$PYTHON_CMD -m pip"; do
+    if eval "$cmd --version" > /dev/null 2>&1; then
+        PIP_CMD="$cmd"
+        echo "Found pip: $PIP_CMD"
+        break
+    fi
+done
+
+if [ -z "$PIP_CMD" ]; then
+    echo "No pip found, trying to install packages with python -m pip"
+    PIP_CMD="$PYTHON_CMD -m pip"
+fi
+
+# Install packages
+echo "Installing packages with: $PIP_CMD"
+$PIP_CMD install --user --upgrade pip
+$PIP_CMD install --user numpy pandas matplotlib tensorflow pynetlogo
 
 # Verify key packages
 echo "Verifying installations..."

@@ -8,51 +8,19 @@
 #SBATCH --partition=stampede # 3 options stampede , bigbatch and biggpu
 #SBATCH --time=3-00:00:00  # max time you want to give your program (this is 3 days)  
 
-# Load required modules (adjust these based on your cluster's available modules)
-module load python/3.9
-module load java/11  # NetLogo requires Java
-# module load cuda/11.8  # For TensorFlow GPU support if available
-
-# Set up environment variables
-export PYTHONUNBUFFERED=1
-export TF_CPP_MIN_LOG_LEVEL=2
-export DISPLAY=""  # Disable display for headless mode
-
 # Define paths
-WORK_DIR="$(pwd)"
-RESULTS_DIR="$WORK_DIR/results"
-JOB_NAME="dqn_sugarscape_${SLURM_JOB_ID}"
-
-# Create results directory
-mkdir -p "$RESULTS_DIR"
-
-# Check if virtual environment exists, create if needed
-if [ ! -d "venv" ]; then
-    echo "Creating virtual environment..."
-    python3 -m venv venv
-fi
-
-# Activate virtual environment
-source venv/bin/activate
-
-# Install required packages if not already installed
-echo "Installing/checking required packages..."
-pip install --upgrade pip
-pip install -r requirements.txt
-
-# Verify installations
-echo "Verifying installations..."
-python3 -c "import numpy, pandas, matplotlib, tensorflow, pynetlogo; print('All packages imported successfully')"
+# INPUT_FILE="../../mass_spec_data/EMPA/17092024_cardiac tissues/h5 files/Sample 23_SGLT2 only_1-8007_SN1p0_centroid.imzml"
+# OUTPUT_DIR="../PresentationData"
+# JOB_NAME="sglt2_only"h
 
 # Run the Python script
 echo "Starting DQN run at $(date)"
-echo "Job ID: $SLURM_JOB_ID"
-echo "Working directory: $WORK_DIR"
 
-python3 dqn.py  # run file
+python dqn.py  # run file
 
 # the comment below specifies how you would run a file with inputs
-# python3 dqn.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --job_type "$JOB_NAME" --job_id "$SLURM_JOB_ID"
+# python temp.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --job_type "$JOB_NAME" --job_id "$SLURM_JOB_ID"
+
 
 echo "Job done DQN run completed at $(date)"
 

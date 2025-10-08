@@ -1,7 +1,0 @@
-/var/lib/slurm/slurmd/job161449/slurm_script: line 68: venv/bin/activate: No such file or directory
-/var/lib/slurm/slurmd/job161449/slurm_script: line 72: pip: command not found
-/var/lib/slurm/slurmd/job161449/slurm_script: line 73: pip: command not found
-Traceback (most recent call last):
-  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/dqn.py", line 2, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'

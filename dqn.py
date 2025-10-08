@@ -125,7 +125,7 @@ class DQNAgent:
 
 
 class MultiAgentDQNEnvironment:
-    """Environment manager for multi-agent DQN learning with comprehensive action space"""
+    """Environment manager for multi-agent DQN learning"""
     
     def __init__(self, n_agents=200):
         self.n_agents = n_agents
@@ -289,7 +289,7 @@ class MultiAgentDQNEnvironment:
         return legal_mask
 
     def choose_actions(self, processed_states, is_audit_period=False):
-        """Choose actions for all agents with legal action masking - OPTIMIZED"""
+        """Choose actions for all agents with legal action masking"""
         actions = {}
         
         if not processed_states:
@@ -300,7 +300,7 @@ class MultiAgentDQNEnvironment:
         states_batch = np.array([processed_states[tid]['state'] for tid in turtle_ids])
         punished_batch = [bool(processed_states[tid]['punished']) for tid in turtle_ids]
         
-        # Get Q-values for all states in one batch prediction (much faster!)
+        # Get Q-values for all states in one batch prediction
         q_values_batch = self.agent.q_network.predict(states_batch, verbose=0)
         
         for i, turtle_id in enumerate(turtle_ids):
@@ -382,9 +382,9 @@ class MultiAgentDQNEnvironment:
                 if not pre_punished and post_punished:
                     # Agent got punished this turn - check what tax action they took
                     if action == 8:  # EVADE action (index 8)
-                        reward = -20.0  # Severe punishment for complete evasion
+                        reward = 0  # Severe punishment for complete evasion
                     elif action == 7:  # PAY_PARTIAL action (index 7)
-                        reward = -10.0  # Less severe punishment for partial payment
+                        reward = 0  # Less severe punishment for partial payment
                     # PAY_FULL (index 6) gets 0 reward (no additional penalty)
                 
                 rewards[turtle_id] = reward
@@ -442,11 +442,17 @@ class DQNTaxSimulation:
     def run_episode(self, years, audit_rate, mode, duration):
         """Run a single episode with enhanced multi-action DQN agents"""
         try:
+            print(f"\n🚀 Starting episode: {years} years, audit_rate={audit_rate}, mode={mode}, duration={duration}")
             self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
             self.netlogo.command('setup')
             
             episode_results = []
             consecutive_empty_years = 0
+            
+            # Track episode statistics
+            total_deaths = 0
+            total_rewards = 0
+            action_counts = {'movement': 0, 'consumption': 0, 'tax': 0}
             
             for year in range(years):
                 # Update environment tick counter
@@ -471,14 +477,28 @@ class DQNTaxSimulation:
                 # Determine if it's an audit period (every 50 ticks)
                 is_audit_period = (year % self.env.audit_frequency == 0)
                 
+                # Debug: Show audit periods
+                if is_audit_period:
+                    print(f"  🔍 Year {year}: AUDIT PERIOD - agents making tax decisions")
+                elif year % 25 == 0:  # Show non-audit periods occasionally
+                    print(f"  🏃 Year {year}: Regular period - movement and consumption only")
+                
                 # Choose actions using enhanced DQN with legal action masking
-                if year < 3:  # Debug info for first few years
-                    print(f"  Choosing actions for {len(pre_states)} agents...")
-                actions_start = time.time()
+                start_time = time.time()
                 actions = self.env.choose_actions(pre_states, is_audit_period)
-                actions_time = time.time() - actions_start
-                if year < 3:
-                    print(f"  Action selection took {actions_time:.2f}s")
+                action_time = time.time() - start_time
+                
+                # Debug: Track action types
+                movement_count = sum(1 for a in actions.values() if a in [0, 1, 2, 3])
+                consumption_count = sum(1 for a in actions.values() if a in [4, 5])
+                tax_count = sum(1 for a in actions.values() if a in [6, 7, 8])
+                
+                action_counts['movement'] += movement_count
+                action_counts['consumption'] += consumption_count
+                action_counts['tax'] += tax_count
+                
+                if year % 25 == 0 or is_audit_period:
+                    print(f"    Actions: {movement_count} move, {consumption_count} consume, {tax_count} tax (took {action_time:.3f}s)")
                 
                 # Translate actions to NetLogo commands
                 movement_commands, tax_decisions = self.env.translate_actions_to_netlogo(actions, is_audit_period)
@@ -524,9 +544,27 @@ class DQNTaxSimulation:
                 # Calculate rewards
                 rewards = self.env.calculate_rewards(pre_states, post_states, actions, died_agents)
                 
-                # Train the DQN (skip during first few years for speed testing)
-                if year > 2:  # Only start training after year 2
-                    self.env.train_step(pre_states, actions, rewards, post_states)
+                # Debug: Track rewards and deaths
+                episode_reward_sum = sum(rewards.values())
+                death_count = len(died_agents)
+                total_deaths += death_count
+                total_rewards += episode_reward_sum
+                
+                punishment_rewards = sum(r for r in rewards.values() if r < 0 and r > -100)  # Tax punishment rewards
+                death_rewards = sum(r for r in rewards.values() if r == -100)  # Death penalty rewards
+                
+                if year % 25 == 0 or death_count > 0 or abs(episode_reward_sum) > 50:
+                    print(f"    Rewards: total={episode_reward_sum:.1f}, deaths={death_count}, punishment={punishment_rewards:.1f}")
+                
+                # Train the DQN
+                memory_before = len(self.env.agent.memory)
+                epsilon_before = self.env.agent.epsilon
+                self.env.train_step(pre_states, actions, rewards, post_states)
+                
+                # Debug: Training info (occasionally)
+                if year % 50 == 0 and year > 0:
+                    print(f"    🧠 Training: memory={len(self.env.agent.memory)}, epsilon={self.env.agent.epsilon:.4f}, "
+                          f"added {len(self.env.agent.memory) - memory_before} experiences")
                 
                 # Collect metrics
                 try:
@@ -568,11 +606,24 @@ class DQNTaxSimulation:
                     'deaths': len(died_agents)
                 })
                 
-                # Progress update - more frequent for debugging
-                if year % 10 == 0 or year < 5:
-                    print(f"Year {year}: Pop={post_population}, Deaths={len(died_agents)}, "
-                          f"Gini={gini:.2f}, Comply={compliance:.2f}, "
-                          f"Epsilon={self.env.agent.epsilon:.4f}")
+                # Progress update
+                if year % 50 == 0:
+                    avg_reward = total_rewards / max(1, year + 1)
+                    print(f"\n📊 Year {year} Summary:")
+                    print(f"    Population: {post_population} (deaths this year: {len(died_agents)})")
+                    print(f"    Economics: Gini={gini:.3f}, Total Sugar={total_sugar:.0f}")
+                    print(f"    Tax Behavior: Compliance={compliance:.1%}, Evasion={evasion:.1%}")
+                    print(f"    Learning: Epsilon={self.env.agent.epsilon:.4f}, Memory={len(self.env.agent.memory)}")
+                    print(f"    Rewards: Current={episode_reward_sum:.1f}, Average={avg_reward:.2f}")
+                    print(f"    Actions so far: {action_counts['movement']} move, {action_counts['consumption']} consume, {action_counts['tax']} tax")
+            
+            # Episode summary
+            print(f"\n✅ Episode Complete!")
+            print(f"    Total years: {len(episode_results)}")
+            print(f"    Total deaths: {total_deaths}")
+            print(f"    Average reward per year: {total_rewards / max(1, len(episode_results)):.2f}")
+            print(f"    Final epsilon: {self.env.agent.epsilon:.6f}")
+            print(f"    Final memory size: {len(self.env.agent.memory)}")
             
             return episode_results
             
@@ -591,12 +642,21 @@ class DQNTaxSimulation:
         print(f"\n🧠 Starting DQN experiment: {experiment_name}")
         print(f"   Parameters: audit={audit_rate}, mode={mode}, duration={duration}")
         print(f"   Neural Network: {self.env.state_size} inputs -> {self.env.total_action_size} outputs")
+        print(f"   🎮 Action Space: 0-3=Move, 4-5=Consume, 6-8=Tax(Pay/Partial/Evade)")
+        print(f"   💀 Death penalty: {self.env.death_penalties}, Tax penalties: -20 evade, -10 partial")
+        print(f"   ⏰ Audit frequency: every {self.env.audit_frequency} ticks")
+        
+        experiment_start_time = time.time()
         
         for episode in range(episodes):
-            print(f"\n📊 Episode {episode+1}/{episodes}")
+            episode_start_time = time.time()
+            print(f"\n" + "="*60)
+            print(f"📊 Episode {episode+1}/{episodes} - Starting at {datetime.now().strftime('%H:%M:%S')}")
+            print(f"="*60)
             
             try:
                 results = self.run_episode(years, audit_rate, mode, duration)
+                episode_time = time.time() - episode_start_time
                 
                 if len(results) > 0:
                     for result in results:
@@ -610,18 +670,58 @@ class DQNTaxSimulation:
                     
                     # Save model periodically
                     if (episode + 1) % 10 == 0:
+                        print(f"📁 Saving model checkpoint at episode {episode+1}...")
                         self.save_models(experiment_name, episode)
                     
-                    print(f"   Episode {episode+1} complete:")
-                    print(f"      Final epsilon: {self.env.agent.epsilon:.6f}")
-                    print(f"      Memory size: {len(self.env.agent.memory)}")
+                    print(f"\n🎯 Episode {episode+1} COMPLETE! (took {episode_time/60:.1f} minutes)")
+                    print(f"    Final learning state:")
+                    print(f"      - Epsilon (exploration): {self.env.agent.epsilon:.6f}")
+                    print(f"      - Memory size: {len(self.env.agent.memory):,} experiences")
+                    print(f"      - Years completed: {len(results)}")
+                    
+                    if results:
+                        final_pop = results[-1]['population']
+                        final_gini = results[-1]['gini']
+                        final_compliance = results[-1]['compliance_rate']
+                        print(f"      - Final population: {final_pop}")
+                        print(f"      - Final Gini coefficient: {final_gini:.3f}")
+                        print(f"      - Final compliance rate: {final_compliance:.1%}")
                     
             except Exception as e:
-                print(f"Error in episode {episode}: {e}")
+                print(f"❌ Error in episode {episode+1}: {e}")
+                import traceback
+                traceback.print_exc()
                 continue
         
         # Save final models
+        print(f"\n💾 Saving final models...")
         self.save_models(experiment_name, 'final')
+        
+        # Experiment completion summary
+        experiment_time = time.time() - experiment_start_time
+        print(f"\n" + "="*60)
+        print(f"🏁 EXPERIMENT '{experiment_name}' COMPLETE!")
+        print(f"="*60)
+        print(f"⏱️  Total time: {experiment_time/60:.1f} minutes ({experiment_time/3600:.2f} hours)")
+        print(f"📊 Episodes completed: {len([r for r in experiment_results if r])}")
+        print(f"🧠 Final learning parameters:")
+        print(f"    - Epsilon: {self.env.agent.epsilon:.6f}")
+        print(f"    - Memory: {len(self.env.agent.memory):,} experiences")
+        print(f"    - Network updates: {self.env.agent.step_count}")
+        
+        if experiment_results:
+            total_years = len(experiment_results)
+            avg_pop = sum(r['population'] for r in experiment_results) / total_years
+            avg_gini = sum(r['gini'] for r in experiment_results) / total_years
+            avg_compliance = sum(r['compliance_rate'] for r in experiment_results) / total_years
+            total_deaths = sum(r['deaths'] for r in experiment_results)
+            
+            print(f"📈 Experiment Statistics:")
+            print(f"    - Total simulation years: {total_years:,}")
+            print(f"    - Average population: {avg_pop:.1f}")
+            print(f"    - Average Gini coefficient: {avg_gini:.3f}")
+            print(f"    - Average compliance rate: {avg_compliance:.1%}")
+            print(f"    - Total agent deaths: {total_deaths:,}")
         
         return experiment_results
     
@@ -668,15 +768,33 @@ class DQNTaxSimulation:
             print("📊 Getting turtle states...")
             states = self.netlogo.report('report-states')
             
-            print(f"📝 Got {len(states)} turtle states")
-            
-            if len(states) > 0:
+            # Handle both list and numpy array cases
+            if states is not None and len(states) > 0:
+                print(f"📋 Got states for {len(states)} agents")
+                
+            if states is not None and len(states) > 0:
                 processed = self.env.process_netlogo_states(states)
                 print(f"🧠 Processed {len(processed)} states for neural network")
+                
+                # Get sample state shape (processed is a dict with turtle_id -> state_dict)
+                if processed:
+                    sample_state_dict = next(iter(processed.values()))
+                    sample_state = sample_state_dict['state']
+                    print(f"🎯 Sample state shape: {sample_state.shape}")
+                    print(f"🎯 Sample state values: {sample_state[:3]}...")
                 
                 # Test action selection
                 actions = self.env.choose_actions(processed, is_audit_period=True)
                 print(f"[ACTION] Generated {len(actions)} actions")
+                
+                # Show action distribution
+                if actions:
+                    action_names = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'CONSUME', 'NO_CONSUME', 'PAY_FULL', 'PAY_PARTIAL', 'EVADE']
+                    action_counts = {}
+                    for action in actions:
+                        action_name = action_names[action] if action < len(action_names) else f'UNKNOWN_{action}'
+                        action_counts[action_name] = action_counts.get(action_name, 0) + 1
+                    print(f"🎮 Action distribution: {action_counts}")
             
             print("\n🎉 DQN CONNECTION TEST SUCCESSFUL! 🎉")
             return True
@@ -801,9 +919,8 @@ def main():
     
     netlogo_path = args.netlogo_path  # Set this if NetLogo is not in default location
     
-    TEST_MODE = not args.full_mode  # Set to False for full experiments
+    TEST_MODE = False  # Set to False for full experiments
     USE_GUI = False   # Always False for cluster compatibility
-    QUICK_TEST = not args.full_mode  # Ultra-fast test mode unless full mode requested
     
     # Set up logging for cluster runs
     if args.cluster_mode:
@@ -845,28 +962,16 @@ def main():
             print("\nRUNNING TEST EXPERIMENT WITH DQN")
             print("-"*40)
             
-            if QUICK_TEST:
-                experiments = [
-                    {
-                        'name': 'dqn_quick_test',
-                        'audit_rate': 0.5,
-                        'mode': 'strict',
-                        'duration': 10,
-                        'years': 10,  # Very short test - just 10 years
-                        'episodes': 1  # Single episode
-                    }
-                ]
-            else:
-                experiments = [
-                    {
-                        'name': 'dqn_test_strict',
-                        'audit_rate': 0.5,
-                        'mode': 'strict',
-                        'duration': 10,
-                        'years': 50,  # Reduced from 200 to 50 for faster testing
-                        'episodes': 1  # Reduced from 3 to 1 for faster testing
-                    }
-                ]
+            experiments = [
+                {
+                    'name': 'dqn_test_strict',
+                    'audit_rate': 0.5,
+                    'mode': 'strict',
+                    'duration': 10,
+                    'years': 200,  # Full test - 200 years
+                    'episodes': 3  # Full test - 3 episodes
+                }
+            ]
         else:
             print("\nRUNNING FULL DQN EXPERIMENTS")
             print("-"*40)

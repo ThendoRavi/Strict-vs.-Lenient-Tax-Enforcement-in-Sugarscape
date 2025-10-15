@@ -1,6 +1,9 @@
 import os
-# Set Java headless mode BEFORE importing pynetlogo
-os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true'
+import sys
+
+# CRITICAL: Set Java options BEFORE any other imports
+# This must be the very first thing in the file
+os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true -Xmx4g'
 os.environ['DISPLAY'] = ''
 
 import numpy as np
@@ -8,7 +11,10 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend for cluster
 import matplotlib.pyplot as plt
+
+# Import pynetlogo with special handling for headless mode
 import pynetlogo
+
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -16,10 +22,8 @@ import random
 from collections import deque
 from datetime import datetime
 import json
-import os
 import time
 import argparse
-import sys
 import logging
 
 
@@ -425,25 +429,44 @@ class DQNTaxSimulation:
     """Main simulation class with DQN agents"""
     
     def __init__(self, netlogo_path=None, gui=False):
-        self.gui = gui
-        # Force headless mode for cluster
-        import os
-        os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true'
+        self.gui = False  # Force headless mode on cluster
+        
+        # Ensure headless environment
+        os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true -Xmx4g'
+        os.environ['DISPLAY'] = ''
         
         try:
+            print(f"🔗 Initializing NetLogo connection...")
+            print(f"   Path: {netlogo_path}")
+            print(f"   GUI mode: FORCED FALSE (headless)")
+            print(f"   Java options: {os.environ.get('JAVA_TOOL_OPTIONS', 'not set')}")
+            
             if netlogo_path:
-                print(f"🔗 Initializing NetLogo connection...")
-                print(f"   Path: {netlogo_path}")
-                print(f"   GUI mode: {gui}")
-                print(f"   Headless: {os.environ.get('JAVA_TOOL_OPTIONS', 'not set')}")
-                self.netlogo = pynetlogo.NetLogoLink(gui=gui, netlogo_home=netlogo_path)
+                # Try to initialize with explicit version and headless settings
+                try:
+                    # Method 1: Try with netlogo_version parameter
+                    self.netlogo = pynetlogo.NetLogoLink(
+                        gui=False,
+                        netlogo_home=netlogo_path,
+                        netlogo_version='6.3',
+                        jvm_home=None  # Let PyNetLogo find Java
+                    )
+                    print(f"✅ Connected using netlogo_version parameter")
+                except TypeError:
+                    # Method 2: Fallback without netlogo_version (older PyNetLogo)
+                    print(f"⚠️  Trying alternative connection method...")
+                    self.netlogo = pynetlogo.NetLogoLink(
+                        gui=False,
+                        netlogo_home=netlogo_path
+                    )
+                    print(f"✅ Connected using basic parameters")
             else:
-                self.netlogo = pynetlogo.NetLogoLink(gui=gui)
-                
+                self.netlogo = pynetlogo.NetLogoLink(gui=False)
+            
             model_file = 'Sugarscape 2 Constant Growback.nlogo'
             if not os.path.exists(model_file):
-                raise FileNotFoundError(f"NetLogo model file '{model_file}' not found")
-                
+                raise FileNotFoundError(f"NetLogo model file '{model_file}' not found in {os.getcwd()}")
+            
             print(f"📂 Loading NetLogo model: {model_file}")
             self.netlogo.load_model(model_file)
             print(f"✅ NetLogo model loaded successfully!")
@@ -452,7 +475,12 @@ class DQNTaxSimulation:
             self.results = []
             
         except Exception as e:
-            print(f"Error initializing NetLogo: {e}")
+            print(f"❌ Error initializing NetLogo: {e}")
+            print(f"   Current directory: {os.getcwd()}")
+            print(f"   NetLogo path: {netlogo_path}")
+            print(f"   Files in directory: {os.listdir('.')[:10]}")
+            import traceback
+            traceback.print_exc()
             raise
     
     def run_episode(self, years, audit_rate, mode, duration):

@@ -13,6 +13,17 @@
 # OUTPUT_DIR="../PresentationData"
 # JOB_NAME="sglt2_only"h
 
+# Set Java headless mode BEFORE Python starts
+export JAVA_TOOL_OPTIONS="-Djava.awt.headless=true -Xmx4g"
+export DISPLAY=""
+export MPLBACKEND="Agg"
+
+# Verify environment
+echo "Environment variables set:"
+echo "  JAVA_TOOL_OPTIONS=$JAVA_TOOL_OPTIONS"
+echo "  DISPLAY=$DISPLAY"
+echo "  MPLBACKEND=$MPLBACKEND"
+
 # Run the Python script
 echo "Starting DQN run at $(date)"
 

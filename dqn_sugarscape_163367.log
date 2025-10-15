@@ -1,0 +1,9 @@
+Starting DQN run at Wed Oct 15 09:30:02 PM SAST 2025
+❌ ERROR: NetLogo not found on Linux!
+Please install NetLogo or specify path with --netlogo-path
+
+To install NetLogo:
+  cd ~
+  wget https://ccl.northwestern.edu/netlogo/6.3.0/NetLogo-6.3.0-64.tgz
+  tar -xzf NetLogo-6.3.0-64.tgz
+Job done DQN run completed at Wed Oct 15 09:31:52 PM SAST 2025

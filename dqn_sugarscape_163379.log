@@ -1,0 +1,26 @@
+Environment variables set:
+  JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Xmx4g
+  DISPLAY=
+  MPLBACKEND=Agg
+Starting DQN run at Wed Oct 15 10:08:05 PM SAST 2025
+✅ Found NetLogo at: /home-mscluster/travhengani/NetLogo 6.3.0
+
+Starting DQN run at Wed Oct 15 22:08:18 2025
+🔗 Initializing NetLogo connection...
+   Path: /home-mscluster/travhengani/NetLogo 6.3.0
+   GUI mode: FORCED FALSE (headless)
+   Java options: -Djava.awt.headless=true -Xmx4g
+⚠️  Trying alternative connection method...
+✅ Connected using basic parameters
+📂 Loading NetLogo model: Sugarscape 2 Constant Growback.nlogo
+java.lang.IllegalStateException: unknown NetLogo version: NetLogo 6.4.0
+	at org.nlogo.headless.HeadlessModelOpener.openFromModel(HeadlessModelOpener.scala:31)
+	at org.nlogo.headless.HeadlessWorkspace.openModel(HeadlessWorkspace.scala:535)
+	at org.nlogo.headless.HeadlessWorkspace.open(HeadlessWorkspace.scala:502)
+	at netLogoLink.NetLogoLink.loadModel(NetLogoLink.java:132)
+
+❌ Error initializing NetLogo: java.lang.IllegalStateException: unknown NetLogo version: NetLogo 6.4.0
+   Current directory: /home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape
+   NetLogo path: /home-mscluster/travhengani/NetLogo 6.3.0
+   Files in directory: ['dqn_sugarscape_err_163379.log', 'dqn_sugarscape_err_163364.log', 'dqn_sugarscape_err_163332.log', 'test_netlogo_path.sh', 'dqn_sugarscape_163378.log', 'sugar-map.txt', 'dqn_sugarscape_163367.log', 'Sugarscape 2 Constant Growback.nlogo', '.git', 'dqn_sugarscape_err_163324.log']
+❌ Failed to initialize simulation: java.lang.IllegalStateException: unknown NetLogo version: NetLogo 6.4.0

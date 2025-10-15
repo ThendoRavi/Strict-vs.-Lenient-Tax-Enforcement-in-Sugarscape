@@ -1,0 +1,19 @@
+2025-10-15 22:01:12.168408: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-15 22:01:20.427860: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true
+Traceback (most recent call last):
+  File "NetLogoLink.java", line 56, in netLogoLink.NetLogoLink.<init>
+Exception: Java Exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/dqn.py", line 1044, in main
+    sim = DQNTaxSimulation(netlogo_path, gui=USE_GUI)
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/dqn.py", line 439, in __init__
+    self.netlogo = pynetlogo.NetLogoLink(gui=gui, netlogo_home=netlogo_path)
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 224, in __init__
+    self.link = NetLogoLink(jpype.java.lang.Boolean(gui), jpype.java.lang.Boolean(thd))
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+java.awt.java.awt.HeadlessException: java.awt.HeadlessException

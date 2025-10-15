@@ -566,7 +566,7 @@ class DQNTaxSimulation:
                     print(f"    🧠 Training: memory={len(self.env.agent.memory)}, epsilon={self.env.agent.epsilon:.4f}, "
                           f"added {len(self.env.agent.memory) - memory_before} experiences")
                 
-                # Collect metrics
+                # Collect metrics (EVERY year, not just audit periods)
                 try:
                     gini = self.netlogo.report('calculate-gini [sugar] of turtles')
                     if gini is None:
@@ -574,17 +574,33 @@ class DQNTaxSimulation:
                 except:
                     gini = 0
                 
+                # Track compliance based on compliance-history (persistent across all years)
                 try:
-                    compliance_count = self.netlogo.report(
-                        'count turtles with [length compliance-history > 0 and last compliance-history = "full"]'
-                    )
-                    compliance = compliance_count / max(1, post_population)
+                    # Count agents who have any compliance history
+                    agents_with_history = self.netlogo.report('count turtles with [length compliance-history > 0]')
+                    if agents_with_history > 0:
+                        # Full compliance: last recorded action was "full" payment
+                        compliance_count = self.netlogo.report(
+                            'count turtles with [length compliance-history > 0 and last compliance-history = "full"]'
+                        )
+                        compliance = compliance_count / max(1, post_population)
+                    else:
+                        compliance = 0
                 except:
                     compliance = 0
                 
+                # Track evasion based on compliance-history (persistent across all years)
                 try:
-                    evasion_count = self.netlogo.report('count turtles with [strategy = "evade"]')
-                    evasion = evasion_count / max(1, post_population)
+                    # Count agents who have any compliance history
+                    agents_with_history = self.netlogo.report('count turtles with [length compliance-history > 0]')
+                    if agents_with_history > 0:
+                        # Evasion: last recorded action was "none" (no payment)
+                        evasion_count = self.netlogo.report(
+                            'count turtles with [length compliance-history > 0 and last compliance-history = "none"]'
+                        )
+                        evasion = evasion_count / max(1, post_population)
+                    else:
+                        evasion = 0
                 except:
                     evasion = 0
                 
@@ -606,6 +622,10 @@ class DQNTaxSimulation:
                     'deaths': len(died_agents)
                 })
                 
+                # Debug: Show sample data points occasionally to verify continuous tracking
+                if year in [0, 1, 2, 10, 20, 30, 49, 50, 51, 100]:
+                    print(f"  [DEBUG Year {year}] Pop={post_population}, Gini={gini:.3f}, Sugar={total_sugar:.0f}, Deaths={len(died_agents)}")
+                
                 # Progress update
                 if year % 50 == 0:
                     avg_reward = total_rewards / max(1, year + 1)
@@ -620,6 +640,7 @@ class DQNTaxSimulation:
             # Episode summary
             print(f"\n✅ Episode Complete!")
             print(f"    Total years: {len(episode_results)}")
+            print(f"    📊 Data points collected: {len(episode_results)} (tracking every year)")
             print(f"    Total deaths: {total_deaths}")
             print(f"    Average reward per year: {total_rewards / max(1, len(episode_results)):.2f}")
             print(f"    Final epsilon: {self.env.agent.epsilon:.6f}")
@@ -818,8 +839,15 @@ def analyze_dqn_results(results):
     if len(results) == 0:
         print("No results generated")
         return None
+    
+    print(f"\n📊 Analyzing {len(results)} total data points...")
         
     df = pd.DataFrame(results)
+    
+    # Diagnostic: Show data distribution
+    print(f"   Data spans {df['year'].min()} to {df['year'].max()} years")
+    print(f"   Unique years tracked: {df['year'].nunique()}")
+    print(f"   Experiments: {df['experiment'].unique().tolist()}")
     
     # Group by experiment and year
     summary = df.groupby(['experiment', 'year']).agg({
@@ -831,6 +859,9 @@ def analyze_dqn_results(results):
         'epsilon': 'mean',
         'deaths': 'mean'
     }).reset_index()
+    
+    print(f"   Summary contains {len(summary)} aggregated data points")
+    print(f"   Graphing continuous data from year {summary['year'].min()} to {summary['year'].max()}")
     
     # Create visualizations
     fig, axes = plt.subplots(3, 2, figsize=(15, 15))
@@ -919,8 +950,8 @@ def main():
     
     netlogo_path = args.netlogo_path  # Set this if NetLogo is not in default location
     
-    TEST_MODE = False  # Set to False for full experiments
-    USE_GUI = False   # Always False for cluster compatibility
+    TEST_MODE = True  # Set to False for full experiments
+    USE_GUI = True   # Always False for cluster compatibility
     
     # Set up logging for cluster runs
     if args.cluster_mode:
@@ -965,9 +996,9 @@ def main():
             experiments = [
                 {
                     'name': 'dqn_test_strict',
-                    'audit_rate': 0.5,
+                    'audit_rate': 0.8,
                     'mode': 'strict',
-                    'duration': 10,
+                    'duration': 50,
                     'years': 200,  # Full test - 200 years
                     'episodes': 3  # Full test - 3 episodes
                 }

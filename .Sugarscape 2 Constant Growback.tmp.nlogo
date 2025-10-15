@@ -92,7 +92,7 @@ to go
   ; Always run the simulation step when go is called
   ; (python-action-received flag is used to track when actions were sent)
   update-punishment-status
-  
+
   ; Only handle tax during audit periods (when actions were received)
   if python-action-received [
     handle-tax
@@ -325,7 +325,7 @@ to receive-movement-commands [movement-list]
   foreach movement-list [ command ->
     let turtle-id item 0 command
     let direction item 1 command
-    
+
     ask turtle turtle-id [
       if not is-punished? [  ; Only move if not punished
         execute-movement direction
@@ -338,12 +338,12 @@ to execute-movement [direction]
   ; Execute movement command (UP, DOWN, LEFT, RIGHT)
   let new-x xcor
   let new-y ycor
-  
+
   if direction = "UP" [ set new-y ycor + 1 ]
   if direction = "DOWN" [ set new-y ycor - 1 ]
   if direction = "LEFT" [ set new-x xcor - 1 ]
   if direction = "RIGHT" [ set new-x xcor + 1 ]
-  
+
   ; Check bounds and move if valid
   if new-x >= 0 and new-x <= 49 and new-y >= 0 and new-y <= 49 [
     let target-patch patch new-x new-y
@@ -456,7 +456,7 @@ to do-visualization
         ; No tax history yet - use neutral color
         set color black
       ]
-      
+
       ; Make punished agents slightly darker to distinguish them
       if is-punished? [
         set color color - 2  ; Darker shade of their compliance color
@@ -636,7 +636,7 @@ initial-population
 initial-population
 10
 1000
-100.0
+200.0
 10
 1
 NIL
@@ -766,7 +766,7 @@ audit-percentage
 audit-percentage
 0
 1
-0.3
+0.8
 0.05
 1
 NIL
@@ -791,7 +791,7 @@ punishment-duration
 punishment-duration
 5
 50
-5.0
+50.0
 5
 1
 NIL
@@ -805,7 +805,7 @@ CHOOSER
 visualization-mode
 visualization-mode
 "none" "vision" "metabolism" "strategy"
-0
+3
 
 TEXTBOX
 220

@@ -948,6 +948,50 @@ def main():
             full_mode = False
         args = DefaultArgs()
     
+    # Determine NetLogo path based on platform
+    netlogo_path = args.netlogo_path
+    
+    if netlogo_path is None:
+        import platform
+        system = platform.system()
+        
+        if system == 'Linux':
+            # Common Linux NetLogo locations (check in order)
+            possible_paths = [
+                os.path.expanduser('~/NetLogo-6.3.0'),
+                os.path.expanduser('~/NetLogo'),
+                '/usr/local/NetLogo-6.3.0',
+                '/usr/local/NetLogo',
+                '/opt/NetLogo-6.3.0',
+                '/opt/NetLogo',
+            ]
+            
+            for path in possible_paths:
+                if os.path.exists(path):
+                    netlogo_path = path
+                    print(f"✅ Found NetLogo at: {netlogo_path}")
+                    break
+            
+            if netlogo_path is None:
+                print("❌ ERROR: NetLogo not found on Linux!")
+                print("Please install NetLogo or specify path with --netlogo-path")
+                print("\nTo install NetLogo:")
+                print("  cd ~")
+                print("  wget https://ccl.northwestern.edu/netlogo/6.3.0/NetLogo-6.3.0-64.tgz")
+                print("  tar -xzf NetLogo-6.3.0-64.tgz")
+                return
+        elif system == 'Windows':
+            # Windows default locations
+            possible_paths = [
+                r'C:\Program Files\NetLogo 6.3.0',
+                r'C:\Program Files\NetLogo',
+                r'C:\NetLogo 6.3.0',
+            ]
+            for path in possible_paths:
+                if os.path.exists(path):
+                    netlogo_path = path
+                    break
+    
     netlogo_path = args.netlogo_path  # Set this if NetLogo is not in default location
     
     TEST_MODE = True  # Set to False for full experiments

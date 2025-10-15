@@ -957,11 +957,15 @@ def main():
         
         if system == 'Linux':
             # Common Linux NetLogo locations (check in order)
+            # NOTE: expanduser handles ~ properly and paths with spaces
             possible_paths = [
+                os.path.expanduser('~/NetLogo 6.3.0'),  # ADD THIS - Path with space for cluster!
                 os.path.expanduser('~/NetLogo-6.3.0'),
                 os.path.expanduser('~/NetLogo'),
+                '/usr/local/NetLogo 6.3.0',
                 '/usr/local/NetLogo-6.3.0',
                 '/usr/local/NetLogo',
+                '/opt/NetLogo 6.3.0',
                 '/opt/NetLogo-6.3.0',
                 '/opt/NetLogo',
             ]
@@ -975,6 +979,10 @@ def main():
             if netlogo_path is None:
                 print("❌ ERROR: NetLogo not found on Linux!")
                 print("Please install NetLogo or specify path with --netlogo-path")
+                print("\nSearched paths:")
+                for path in possible_paths:
+                    exists = "✅" if os.path.exists(path) else "❌"
+                    print(f"  {exists} {path}")
                 print("\nTo install NetLogo:")
                 print("  cd ~")
                 print("  wget https://ccl.northwestern.edu/netlogo/6.3.0/NetLogo-6.3.0-64.tgz")
@@ -992,7 +1000,40 @@ def main():
                     netlogo_path = path
                     break
     
-    netlogo_path = args.netlogo_path  # Set this if NetLogo is not in default location
+    # Configure logging based on mode
+    if args.cluster_mode:
+        log_file = f'dqn_run_{args.job_id}.log'
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(log_file),
+                logging.StreamHandler()
+            ]
+        )
+        USE_GUI = False
+    else:
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        USE_GUI = True
+    
+    # Log start time
+    start_time = datetime.now()
+    print(f"\nStarting DQN run at {start_time.strftime('%c')}")
+    
+    # Initialize simulation with detected NetLogo path
+    try:
+        sim = DQNTaxSimulation(netlogo_path, gui=USE_GUI)
+        print(f"✅ Successfully initialized DQN simulation")
+        print(f"   NetLogo path: {netlogo_path}")
+        print(f"   GUI mode: {USE_GUI}")
+    except Exception as e:
+        print(f"❌ Failed to initialize simulation: {e}")
+        import traceback
+        traceback.print_exc()
+        return
     
     TEST_MODE = True  # Set to False for full experiments
     USE_GUI = False   # Always False for cluster compatibility

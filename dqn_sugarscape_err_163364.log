@@ -1,0 +1,17 @@
+2025-10-15 21:16:19.588386: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-15 21:17:34.351748: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/dqn.py", line 982, in main
+    sim = DQNTaxSimulation(netlogo_path, gui=USE_GUI)
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/dqn.py", line 428, in __init__
+    self.netlogo = pynetlogo.NetLogoLink(gui=gui)
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 183, in __init__
+    netlogo_home = get_netlogo_home()
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 138, in get_netlogo_home
+    netlogo_home = find_netlogo_linux()
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 127, in find_netlogo_linux
+    raise NotImplementedError(
+        ("NetLogoLink requires the netlogo_home on Linux")
+    )
+NotImplementedError: NetLogoLink requires the netlogo_home on Linux

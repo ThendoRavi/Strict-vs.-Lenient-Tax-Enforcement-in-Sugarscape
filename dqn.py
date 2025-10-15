@@ -1001,15 +1001,21 @@ def main():
         
         if system == 'Linux':
             # Common Linux NetLogo locations (check in order)
-            # NOTE: expanduser handles ~ properly and paths with spaces
             possible_paths = [
-                os.path.expanduser('~/NetLogo 6.3.0'),  # ADD THIS - Path with space for cluster!
-                os.path.expanduser('~/NetLogo-6.3.0'),
+                os.path.expanduser('~/NetLogo-6.4.0-64'),  # Your actual installation!
+                os.path.expanduser('~/NetLogo-6.4.0'),     # Alternative without -64
+                os.path.expanduser('~/NetLogo 6.4.0'),     # Space version
+                os.path.expanduser('~/NetLogo 6.3.0'),     # Older version with space
+                os.path.expanduser('~/NetLogo-6.3.0'),     # Older version with hyphen
                 os.path.expanduser('~/NetLogo'),
-                '/usr/local/NetLogo 6.3.0',
+                '/usr/local/NetLogo-6.4.0-64',
+                '/usr/local/NetLogo-6.4.0',
+                '/usr/local/NetLogo 6.4.0',
                 '/usr/local/NetLogo-6.3.0',
                 '/usr/local/NetLogo',
-                '/opt/NetLogo 6.3.0',
+                '/opt/NetLogo-6.4.0-64',
+                '/opt/NetLogo-6.4.0',
+                '/opt/NetLogo 6.4.0',
                 '/opt/NetLogo-6.3.0',
                 '/opt/NetLogo',
             ]

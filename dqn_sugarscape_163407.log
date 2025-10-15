@@ -1,0 +1,514 @@
+Environment variables set:
+  JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Xmx4g
+  DISPLAY=
+  MPLBACKEND=Agg
+Starting DQN run at Wed Oct 15 11:43:59 PM SAST 2025
+✅ Found NetLogo at: /home-mscluster/travhengani/NetLogo-6.4.0-64
+
+Starting DQN run at Wed Oct 15 23:44:17 2025
+🔗 Initializing NetLogo connection...
+   Path: /home-mscluster/travhengani/NetLogo-6.4.0-64
+   GUI mode: FORCED FALSE (headless)
+   Java options: -Djava.awt.headless=true -Xmx4g
+⚠️  Trying alternative connection method...
+✅ Connected using basic parameters
+📂 Loading NetLogo model: Sugarscape 2 Constant Growback.nlogo
+✅ NetLogo model loaded successfully!
+✅ Successfully initialized DQN simulation
+   NetLogo path: /home-mscluster/travhengani/NetLogo-6.4.0-64
+   GUI mode: True
+============================================================
+DEEP Q-NETWORK TAX COMPLIANCE SIMULATION
+============================================================
+
+[AI] Using TensorFlow version: 2.20.0
+[ACTION] Action spaces:
+   - Movement: UP, DOWN, LEFT, RIGHT
+   - Tax compliance: Pay full, Pay partial, Evade
+[PENALTY] Death penalty: Large negative reward for learning
+
+Initializing DQN simulation...
+🔗 Initializing NetLogo connection...
+   Path: /home-mscluster/travhengani/NetLogo-6.4.0-64
+   GUI mode: FORCED FALSE (headless)
+   Java options: -Djava.awt.headless=true -Xmx4g
+⚠️  Trying alternative connection method...
+✅ Connected using basic parameters
+📂 Loading NetLogo model: Sugarscape 2 Constant Growback.nlogo
+✅ NetLogo model loaded successfully!
+
+Testing Python-NetLogo connection...
+🔄 Testing DQN-NetLogo connection...
+🎯 Running setup...
+✅ Setup complete!
+👥 Population: 200 turtles
+📊 Getting turtle states...
+📋 Got states for 200 agents
+🧠 Processed 200 states for neural network
+🎯 Sample state shape: (10,)
+🎯 Sample state values: [0.01 0.1  1.  ]...
+[ACTION] Generated 200 actions
+🎮 Action distribution: {'UNKNOWN_152': 1, 'UNKNOWN_114': 1, 'UNKNOWN_15': 1, 'UNKNOWN_55': 1, 'UNKNOWN_76': 1, 'UNKNOWN_132': 1, 'PAY_FULL': 1, 'UNKNOWN_184': 1, 'UNKNOWN_164': 1, 'UNKNOWN_108': 1, 'UNKNOWN_79': 1, 'UNKNOWN_107': 1, 'UNKNOWN_104': 1, 'UNKNOWN_97': 1, 'UNKNOWN_119': 1, 'UNKNOWN_177': 1, 'UNKNOWN_95': 1, 'UNKNOWN_40': 1, 'UNKNOWN_190': 1, 'UNKNOWN_29': 1, 'UNKNOWN_124': 1, 'UNKNOWN_130': 1, 'UNKNOWN_34': 1, 'UNKNOWN_42': 1, 'UNKNOWN_41': 1, 'UNKNOWN_146': 1, 'UNKNOWN_176': 1, 'UNKNOWN_21': 1, 'UNKNOWN_129': 1, 'UNKNOWN_32': 1, 'UNKNOWN_35': 1, 'UNKNOWN_197': 1, 'UNKNOWN_142': 1, 'UNKNOWN_175': 1, 'UNKNOWN_133': 1, 'UNKNOWN_45': 1, 'UNKNOWN_188': 1, 'UNKNOWN_10': 1, 'UNKNOWN_112': 1, 'UNKNOWN_71': 1, 'UNKNOWN_140': 1, 'UNKNOWN_77': 1, 'UNKNOWN_93': 1, 'UNKNOWN_131': 1, 'UNKNOWN_106': 1, 'UNKNOWN_122': 1, 'UNKNOWN_172': 1, 'UNKNOWN_113': 1, 'UNKNOWN_49': 1, 'UNKNOWN_125': 1, 'UNKNOWN_51': 1, 'UNKNOWN_192': 1, 'UNKNOWN_161': 1, 'UNKNOWN_58': 1, 'UNKNOWN_185': 1, 'UNKNOWN_138': 1, 'UNKNOWN_20': 1, 'UNKNOWN_150': 1, 'UNKNOWN_170': 1, 'UNKNOWN_109': 1, 'UNKNOWN_100': 1, 'UNKNOWN_156': 1, 'UNKNOWN_118': 1, 'UNKNOWN_12': 1, 'UNKNOWN_39': 1, 'UNKNOWN_120': 1, 'UNKNOWN_134': 1, 'UNKNOWN_23': 1, 'UNKNOWN_135': 1, 'UNKNOWN_38': 1, 'UNKNOWN_199': 1, 'UNKNOWN_9': 1, 'UNKNOWN_163': 1, 'UNKNOWN_82': 1, 'UNKNOWN_59': 1, 'UNKNOWN_173': 1, 'UNKNOWN_182': 1, 'UNKNOWN_147': 1, 'UNKNOWN_26': 1, 'UNKNOWN_36': 1, 'UNKNOWN_46': 1, 'UNKNOWN_61': 1, 'RIGHT': 1, 'UNKNOWN_57': 1, 'UNKNOWN_128': 1, 'UNKNOWN_168': 1, 'DOWN': 1, 'UNKNOWN_80': 1, 'UNKNOWN_81': 1, 'UNKNOWN_53': 1, 'UNKNOWN_74': 1, 'UNKNOWN_121': 1, 'UNKNOWN_60': 1, 'UNKNOWN_153': 1, 'UNKNOWN_52': 1, 'UNKNOWN_94': 1, 'NO_CONSUME': 1, 'UNKNOWN_158': 1, 'UNKNOWN_24': 1, 'UNKNOWN_196': 1, 'UNKNOWN_69': 1, 'UNKNOWN_31': 1, 'UNKNOWN_154': 1, 'UNKNOWN_171': 1, 'UNKNOWN_137': 1, 'UNKNOWN_87': 1, 'UNKNOWN_126': 1, 'UNKNOWN_68': 1, 'UNKNOWN_33': 1, 'UNKNOWN_85': 1, 'EVADE': 1, 'UNKNOWN_28': 1, 'UNKNOWN_98': 1, 'UNKNOWN_63': 1, 'UNKNOWN_139': 1, 'UNKNOWN_111': 1, 'UNKNOWN_73': 1, 'UNKNOWN_148': 1, 'UNKNOWN_56': 1, 'UNKNOWN_166': 1, 'UNKNOWN_181': 1, 'UNKNOWN_194': 1, 'UNKNOWN_165': 1, 'UNKNOWN_157': 1, 'UNKNOWN_99': 1, 'UNKNOWN_191': 1, 'UNKNOWN_169': 1, 'UNKNOWN_88': 1, 'UNKNOWN_101': 1, 'UNKNOWN_64': 1, 'UNKNOWN_116': 1, 'UNKNOWN_17': 1, 'UNKNOWN_54': 1, 'UNKNOWN_193': 1, 'UNKNOWN_143': 1, 'UNKNOWN_180': 1, 'UNKNOWN_44': 1, 'UNKNOWN_37': 1, 'UNKNOWN_174': 1, 'CONSUME': 1, 'UNKNOWN_178': 1, 'UNKNOWN_102': 1, 'UNKNOWN_48': 1, 'UNKNOWN_149': 1, 'UNKNOWN_18': 1, 'LEFT': 1, 'UNKNOWN_105': 1, 'UNKNOWN_162': 1, 'UNKNOWN_86': 1, 'UNKNOWN_84': 1, 'UNKNOWN_70': 1, 'UNKNOWN_47': 1, 'UNKNOWN_22': 1, 'UNKNOWN_50': 1, 'UNKNOWN_115': 1, 'UNKNOWN_141': 1, 'UNKNOWN_136': 1, 'UNKNOWN_66': 1, 'UNKNOWN_160': 1, 'UNKNOWN_11': 1, 'UNKNOWN_72': 1, 'UNKNOWN_198': 1, 'UNKNOWN_186': 1, 'UNKNOWN_92': 1, 'UNKNOWN_167': 1, 'UNKNOWN_189': 1, 'UNKNOWN_187': 1, 'UNKNOWN_91': 1, 'UNKNOWN_19': 1, 'UNKNOWN_90': 1, 'UNKNOWN_151': 1, 'UNKNOWN_16': 1, 'UNKNOWN_117': 1, 'UNKNOWN_43': 1, 'UNKNOWN_195': 1, 'UNKNOWN_30': 1, 'UNKNOWN_127': 1, 'UNKNOWN_67': 1, 'UNKNOWN_155': 1, 'UNKNOWN_78': 1, 'UNKNOWN_83': 1, 'UNKNOWN_179': 1, 'UNKNOWN_25': 1, 'UNKNOWN_14': 1, 'PAY_PARTIAL': 1, 'UNKNOWN_144': 1, 'UNKNOWN_159': 1, 'UNKNOWN_103': 1, 'UNKNOWN_96': 1, 'UP': 1, 'UNKNOWN_62': 1, 'UNKNOWN_27': 1, 'UNKNOWN_110': 1, 'UNKNOWN_183': 1, 'UNKNOWN_65': 1, 'UNKNOWN_75': 1, 'UNKNOWN_145': 1, 'UNKNOWN_13': 1, 'UNKNOWN_89': 1, 'UNKNOWN_123': 1}
+
+🎉 DQN CONNECTION TEST SUCCESSFUL! 🎉
+
+============================================================
+
+RUNNING TEST EXPERIMENT WITH DQN
+----------------------------------------
+
+🔬 Experiment 1/1: dqn_test_strict
+
+🧠 Starting DQN experiment: dqn_test_strict
+   Parameters: audit=0.3, mode=strict, duration=50
+   Neural Network: 10 inputs -> 9 outputs
+   🎮 Action Space: 0-3=Move, 4-5=Consume, 6-8=Tax(Pay/Partial/Evade)
+   💀 Death penalty: -100, Tax penalties: -20 evade, -10 partial
+   ⏰ Audit frequency: every 50 ticks
+
+============================================================
+📊 Episode 1/3 - Starting at 23:44:35
+============================================================
+
+🚀 Starting episode: 200 years, audit_rate=0.3, mode=strict, duration=50
+  🔍 Year 0: AUDIT PERIOD - agents making tax decisions
+    Actions: 87 move, 46 consume, 67 tax (took 0.106s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  [DEBUG Year 0] Pop=200, Gini=0.212, Sugar=2695, Deaths=0
+
+📊 Year 0 Summary:
+    Population: 200 (deaths this year: 0)
+    Economics: Gini=0.212, Total Sugar=2695
+    Tax Behavior: Compliance=79.5%, Evasion=9.0%
+    Learning: Epsilon=0.9950, Memory=200
+    Rewards: Current=0.0, Average=0.00
+    Actions so far: 87 move, 46 consume, 67 tax
+  [DEBUG Year 1] Pop=200, Gini=0.226, Sugar=2805, Deaths=0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+  [DEBUG Year 2] Pop=196, Gini=0.232, Sugar=2857, Deaths=4
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+  [DEBUG Year 10] Pop=171, Gini=0.321, Sugar=3563, Deaths=4
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [DEBUG Year 20] Pop=154, Gini=0.353, Sugar=4824, Deaths=1
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 25: Regular period - movement and consumption only
+    Actions: 88 move, 60 consume, 0 tax (took 0.100s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [DEBUG Year 30] Pop=141, Gini=0.338, Sugar=6263, Deaths=1
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [DEBUG Year 49] Pop=135, Gini=0.334, Sugar=9150, Deaths=0
+  🔍 Year 50: AUDIT PERIOD - agents making tax decisions
+    Actions: 52 move, 31 consume, 52 tax (took 0.099s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=7935, epsilon=0.7744, added 135 experiences
+  [DEBUG Year 50] Pop=135, Gini=0.333, Sugar=6126, Deaths=0
+
+📊 Year 50 Summary:
+    Population: 135 (deaths this year: 0)
+    Economics: Gini=0.333, Total Sugar=6126
+    Tax Behavior: Compliance=77.0%, Evasion=12.6%
+    Learning: Epsilon=0.7744, Memory=7935
+    Rewards: Current=0.0, Average=-127.45
+    Actions so far: 4932 move, 2884 consume, 119 tax
+  [DEBUG Year 51] Pop=135, Gini=0.335, Sugar=6300, Deaths=0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 75: Regular period - movement and consumption only
+    Actions: 62 move, 68 consume, 0 tax (took 0.101s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🔍 Year 100: AUDIT PERIOD - agents making tax decisions
+    Actions: 53 move, 44 consume, 32 tax (took 0.103s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.6027, added 0 experiences
+  [DEBUG Year 100] Pop=129, Gini=0.345, Sugar=8661, Deaths=0
+
+📊 Year 100 Summary:
+    Population: 129 (deaths this year: 0)
+    Economics: Gini=0.345, Total Sugar=8661
+    Tax Behavior: Compliance=82.2%, Evasion=8.5%
+    Learning: Epsilon=0.6027, Memory=10000
+    Rewards: Current=0.0, Average=-70.30
+    Actions so far: 8356 move, 5954 consume, 151 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  🏃 Year 125: Regular period - movement and consumption only
+    Actions: 50 move, 76 consume, 0 tax (took 0.098s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🔍 Year 150: AUDIT PERIOD - agents making tax decisions
+    Actions: 46 move, 28 consume, 50 tax (took 0.098s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.4691, added 0 experiences
+
+📊 Year 150 Summary:
+    Population: 123 (deaths this year: 1)
+    Economics: Gini=0.346, Total Sugar=10174
+    Tax Behavior: Compliance=73.2%, Evasion=1.6%
+    Learning: Epsilon=0.4691, Memory=10000
+    Rewards: Current=-100.0, Average=-50.99
+    Actions so far: 11151 move, 9402 consume, 201 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 175: Regular period - movement and consumption only
+    Actions: 43 move, 73 consume, 0 tax (took 0.096s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+
+✅ Episode Complete!
+    Total years: 200
+    📊 Data points collected: 200 (tracking every year)
+    Total deaths: 86
+    Average reward per year: -43.00
+    Final epsilon: 0.366958
+    Final memory size: 10000
+
+🎯 Episode 1 COMPLETE! (took 1.1 minutes)
+    Final learning state:
+      - Epsilon (exploration): 0.366958
+      - Memory size: 10,000 experiences
+      - Years completed: 200
+      - Final population: 114
+      - Final Gini coefficient: 0.338
+      - Final compliance rate: 78.1%
+
+============================================================
+📊 Episode 2/3 - Starting at 23:45:43
+============================================================
+
+🚀 Starting episode: 200 years, audit_rate=0.3, mode=strict, duration=50
+  🔍 Year 0: AUDIT PERIOD - agents making tax decisions
+    Actions: 66 move, 60 consume, 74 tax (took 0.104s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  [DEBUG Year 0] Pop=200, Gini=0.244, Sugar=2546, Deaths=0
+
+📊 Year 0 Summary:
+    Population: 200 (deaths this year: 0)
+    Economics: Gini=0.244, Total Sugar=2546
+    Tax Behavior: Compliance=72.0%, Evasion=4.0%
+    Learning: Epsilon=0.3651, Memory=10000
+    Rewards: Current=0.0, Average=0.00
+    Actions so far: 66 move, 60 consume, 74 tax
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  [DEBUG Year 1] Pop=198, Gini=0.259, Sugar=2626, Deaths=2
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  [DEBUG Year 2] Pop=196, Gini=0.285, Sugar=2661, Deaths=2
+    Rewards: total=-700.0, deaths=7, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-600.0, deaths=6, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+  [DEBUG Year 10] Pop=162, Gini=0.340, Sugar=3333, Deaths=5
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+  [DEBUG Year 20] Pop=140, Gini=0.341, Sugar=4588, Deaths=4
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  🏃 Year 25: Regular period - movement and consumption only
+    Actions: 71 move, 65 consume, 0 tax (took 0.099s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  [DEBUG Year 30] Pop=131, Gini=0.335, Sugar=6006, Deaths=2
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [DEBUG Year 49] Pop=125, Gini=0.333, Sugar=8742, Deaths=0
+  🔍 Year 50: AUDIT PERIOD - agents making tax decisions
+    Actions: 36 move, 44 consume, 45 tax (took 0.096s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.2842, added 0 experiences
+  [DEBUG Year 50] Pop=125, Gini=0.314, Sugar=5678, Deaths=0
+
+📊 Year 50 Summary:
+    Population: 125 (deaths this year: 0)
+    Economics: Gini=0.314, Total Sugar=5678
+    Tax Behavior: Compliance=80.0%, Evasion=7.2%
+    Learning: Epsilon=0.2842, Memory=10000
+    Rewards: Current=0.0, Average=-147.06
+    Actions so far: 3881 move, 3472 consume, 119 tax
+  [DEBUG Year 51] Pop=125, Gini=0.315, Sugar=5846, Deaths=0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 75: Regular period - movement and consumption only
+    Actions: 42 move, 79 consume, 0 tax (took 0.093s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🔍 Year 100: AUDIT PERIOD - agents making tax decisions
+    Actions: 21 move, 75 consume, 24 tax (took 0.094s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.2212, added 0 experiences
+  [DEBUG Year 100] Pop=119, Gini=0.325, Sugar=8170, Deaths=1
+
+📊 Year 100 Summary:
+    Population: 119 (deaths this year: 1)
+    Economics: Gini=0.325, Total Sugar=8170
+    Tax Behavior: Compliance=86.6%, Evasion=2.5%
+    Learning: Epsilon=0.2212, Memory=10000
+    Rewards: Current=-100.0, Average=-80.20
+    Actions so far: 6127 move, 7277 consume, 143 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 125: Regular period - movement and consumption only
+    Actions: 19 move, 98 consume, 0 tax (took 0.124s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🔍 Year 150: AUDIT PERIOD - agents making tax decisions
+    Actions: 16 move, 87 consume, 12 tax (took 0.114s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.1721, added 0 experiences
+
+📊 Year 150 Summary:
+    Population: 115 (deaths this year: 0)
+    Economics: Gini=0.315, Total Sugar=9531
+    Tax Behavior: Compliance=91.3%, Evasion=1.7%
+    Learning: Epsilon=0.1721, Memory=10000
+    Rewards: Current=0.0, Average=-56.29
+    Actions so far: 7712 move, 11503 consume, 155 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 175: Regular period - movement and consumption only
+    Actions: 50 move, 64 consume, 0 tax (took 0.101s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+
+✅ Episode Complete!
+    Total years: 200
+    📊 Data points collected: 200 (tracking every year)
+    Total deaths: 88
+    Average reward per year: -44.00
+    Final epsilon: 0.134658
+    Final memory size: 10000
+
+🎯 Episode 2 COMPLETE! (took 1.1 minutes)
+    Final learning state:
+      - Epsilon (exploration): 0.134658
+      - Memory size: 10,000 experiences
+      - Years completed: 200
+      - Final population: 112
+      - Final Gini coefficient: 0.315
+      - Final compliance rate: 92.9%
+
+============================================================
+📊 Episode 3/3 - Starting at 23:46:46
+============================================================
+
+🚀 Starting episode: 200 years, audit_rate=0.3, mode=strict, duration=50
+  🔍 Year 0: AUDIT PERIOD - agents making tax decisions
+    Actions: 78 move, 107 consume, 15 tax (took 0.127s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  [DEBUG Year 0] Pop=200, Gini=0.197, Sugar=2719, Deaths=0
+
+📊 Year 0 Summary:
+    Population: 200 (deaths this year: 0)
+    Economics: Gini=0.197, Total Sugar=2719
+    Tax Behavior: Compliance=96.0%, Evasion=0.5%
+    Learning: Epsilon=0.1340, Memory=10000
+    Rewards: Current=0.0, Average=0.00
+    Actions so far: 78 move, 107 consume, 15 tax
+  [DEBUG Year 1] Pop=200, Gini=0.203, Sugar=2832, Deaths=0
+  [DEBUG Year 2] Pop=200, Gini=0.223, Sugar=2893, Deaths=0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-600.0, deaths=6, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  [DEBUG Year 10] Pop=180, Gini=0.337, Sugar=3577, Deaths=2
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-500.0, deaths=5, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [DEBUG Year 20] Pop=152, Gini=0.335, Sugar=4845, Deaths=1
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 25: Regular period - movement and consumption only
+    Actions: 100 move, 46 consume, 0 tax (took 0.103s)
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  [DEBUG Year 30] Pop=140, Gini=0.317, Sugar=6299, Deaths=0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [DEBUG Year 49] Pop=136, Gini=0.329, Sugar=9188, Deaths=0
+  🔍 Year 50: AUDIT PERIOD - agents making tax decisions
+    Actions: 30 move, 76 consume, 30 tax (took 0.101s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.1043, added 0 experiences
+  [DEBUG Year 50] Pop=136, Gini=0.309, Sugar=5945, Deaths=0
+
+📊 Year 50 Summary:
+    Population: 136 (deaths this year: 0)
+    Economics: Gini=0.309, Total Sugar=5945
+    Tax Behavior: Compliance=92.6%, Evasion=0.0%
+    Learning: Epsilon=0.1043, Memory=10000
+    Rewards: Current=0.0, Average=-125.49
+    Actions so far: 4484 move, 3454 consume, 45 tax
+  [DEBUG Year 51] Pop=136, Gini=0.308, Sugar=6136, Deaths=0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  🏃 Year 75: Regular period - movement and consumption only
+    Actions: 58 move, 74 consume, 0 tax (took 0.100s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🔍 Year 100: AUDIT PERIOD - agents making tax decisions
+    Actions: 23 move, 86 consume, 21 tax (took 0.098s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.0812, added 0 experiences
+  [DEBUG Year 100] Pop=130, Gini=0.306, Sugar=8531, Deaths=0
+
+📊 Year 100 Summary:
+    Population: 130 (deaths this year: 0)
+    Economics: Gini=0.306, Total Sugar=8531
+    Tax Behavior: Compliance=93.1%, Evasion=0.0%
+    Learning: Epsilon=0.0812, Memory=10000
+    Rewards: Current=0.0, Average=-69.31
+    Actions so far: 7232 move, 7320 consume, 66 tax
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  🏃 Year 125: Regular period - movement and consumption only
+    Actions: 36 move, 92 consume, 0 tax (took 0.091s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🔍 Year 150: AUDIT PERIOD - agents making tax decisions
+    Actions: 19 move, 99 consume, 9 tax (took 0.098s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    🧠 Training: memory=10000, epsilon=0.0632, added 0 experiences
+
+📊 Year 150 Summary:
+    Population: 127 (deaths this year: 0)
+    Economics: Gini=0.318, Total Sugar=9789
+    Tax Behavior: Compliance=95.3%, Evasion=3.1%
+    Learning: Epsilon=0.0632, Memory=10000
+    Rewards: Current=0.0, Average=-48.34
+    Actions so far: 9149 move, 11809 consume, 75 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  🏃 Year 175: Regular period - movement and consumption only
+    Actions: 63 move, 61 consume, 0 tax (took 0.094s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+
+✅ Episode Complete!
+    Total years: 200
+    📊 Data points collected: 200 (tracking every year)
+    Total deaths: 77
+    Average reward per year: -38.50
+    Final epsilon: 0.049414
+    Final memory size: 10000
+
+🎯 Episode 3 COMPLETE! (took 1.1 minutes)
+    Final learning state:
+      - Epsilon (exploration): 0.049414
+      - Memory size: 10,000 experiences
+      - Years completed: 200
+      - Final population: 123
+      - Final Gini coefficient: 0.313
+      - Final compliance rate: 97.6%
+
+💾 Saving final models...
+
+============================================================
+🏁 EXPERIMENT 'dqn_test_strict' COMPLETE!
+============================================================
+⏱️  Total time: 3.3 minutes (0.05 hours)
+📊 Episodes completed: 600
+🧠 Final learning parameters:
+    - Epsilon: 0.049414
+    - Memory: 10,000 experiences
+    - Network updates: 600
+📈 Experiment Statistics:
+    - Total simulation years: 600
+    - Average population: 130.5
+    - Average Gini coefficient: 0.326
+    - Average compliance rate: 86.8%
+    - Total agent deaths: 251
+   ✅ Experiment 'dqn_test_strict' complete!
+
+============================================================
+ANALYZING DQN RESULTS
+----------------------------------------
+
+📊 Analyzing 600 total data points...
+   Data spans 0 to 199 years
+   Unique years tracked: 200
+   Experiments: ['dqn_test_strict']
+   Summary contains 200 aggregated data points
+   Graphing continuous data from year 0 to 199
+✅ Results saved to results/dqn_experiment_summary.csv
+📊 Plots saved to results/dqn_summary_plot.png
+
+📈 Final Statistics:
+----------------------------------------
+
+dqn_test_strict:
+  Final Gini: 0.322
+  Final Compliance: 0.895
+  Final Population: 116
+  Final Evasion Rate: 0.014
+  Avg Deaths/Year: 0.0
+
+============================================================
+DQN SIMULATION COMPLETE!
+============================================================

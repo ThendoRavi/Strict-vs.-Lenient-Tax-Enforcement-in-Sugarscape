@@ -766,7 +766,7 @@ audit-percentage
 audit-percentage
 0
 1
-0.8
+0.3
 0.05
 1
 NIL
@@ -805,7 +805,7 @@ CHOOSER
 visualization-mode
 visualization-mode
 "none" "vision" "metabolism" "strategy"
-3
+0
 
 TEXTBOX
 220

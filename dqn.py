@@ -996,7 +996,7 @@ def main():
             experiments = [
                 {
                     'name': 'dqn_test_strict',
-                    'audit_rate': 0.8,
+                    'audit_rate': 0.3,
                     'mode': 'strict',
                     'duration': 50,
                     'years': 200,  # Full test - 200 years

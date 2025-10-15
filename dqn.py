@@ -1,3 +1,8 @@
+import os
+# Set Java headless mode BEFORE importing pynetlogo
+os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true'
+os.environ['DISPLAY'] = ''
+
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -421,8 +426,16 @@ class DQNTaxSimulation:
     
     def __init__(self, netlogo_path=None, gui=False):
         self.gui = gui
+        # Force headless mode for cluster
+        import os
+        os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true'
+        
         try:
             if netlogo_path:
+                print(f"🔗 Initializing NetLogo connection...")
+                print(f"   Path: {netlogo_path}")
+                print(f"   GUI mode: {gui}")
+                print(f"   Headless: {os.environ.get('JAVA_TOOL_OPTIONS', 'not set')}")
                 self.netlogo = pynetlogo.NetLogoLink(gui=gui, netlogo_home=netlogo_path)
             else:
                 self.netlogo = pynetlogo.NetLogoLink(gui=gui)
@@ -431,7 +444,10 @@ class DQNTaxSimulation:
             if not os.path.exists(model_file):
                 raise FileNotFoundError(f"NetLogo model file '{model_file}' not found")
                 
+            print(f"📂 Loading NetLogo model: {model_file}")
             self.netlogo.load_model(model_file)
+            print(f"✅ NetLogo model loaded successfully!")
+            
             self.env = MultiAgentDQNEnvironment()
             self.results = []
             

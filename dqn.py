@@ -951,7 +951,7 @@ def main():
     netlogo_path = args.netlogo_path  # Set this if NetLogo is not in default location
     
     TEST_MODE = True  # Set to False for full experiments
-    USE_GUI = True   # Always False for cluster compatibility
+    USE_GUI = False   # Always False for cluster compatibility
     
     # Set up logging for cluster runs
     if args.cluster_mode:

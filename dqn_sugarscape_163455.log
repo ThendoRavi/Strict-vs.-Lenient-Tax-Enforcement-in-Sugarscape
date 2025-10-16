@@ -1,0 +1,6 @@
+Environment variables set:
+  JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Xmx4g
+  DISPLAY=
+  MPLBACKEND=Agg
+Starting DQN run at Thu Oct 16 10:50:18 AM SAST 2025
+Job done DQN run completed at Thu Oct 16 10:54:34 AM SAST 2025

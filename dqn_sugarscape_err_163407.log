@@ -1,9 +1,0 @@
-2025-10-15 23:44:03.645235: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-2025-10-15 23:44:14.673465: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
-Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Xmx4g
-WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1760564671.952555 1278666 cuda_executor.cc:1309] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
-E0000 00:00:1760564671.971924 1278666 cuda_executor.cc:1309] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
-W0000 00:00:1760564672.278337 1278666 gpu_device.cc:2342] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
-Skipping registering GPU devices...
-slurmstepd-mscluster16: error: *** JOB 163407 ON mscluster16 CANCELLED AT 2025-10-15T23:51:35 ***

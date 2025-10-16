@@ -871,11 +871,47 @@ class DQNTaxSimulation:
             return False
     
     def close(self):
-        """Clean up NetLogo connection"""
+        """Clean up NetLogo connection and shutdown JVM"""
+        # Clear TensorFlow session and models to release threads
         try:
+            print("🧠 Clearing TensorFlow sessions...")
+            import tensorflow as tf
+            from tensorflow import keras
+            
+            # Clear Keras session
+            keras.backend.clear_session()
+            
+            # Delete model references
+            if hasattr(self, 'model'):
+                del self.model
+            if hasattr(self, 'target_model'):
+                del self.target_model
+            
+            print("✅ TensorFlow cleanup complete")
+        except Exception as e:
+            print(f"⚠️  Warning during TensorFlow cleanup: {e}")
+        
+        # Close matplotlib figures
+        try:
+            import matplotlib.pyplot as plt
+            plt.close('all')
+        except Exception as e:
+            print(f"⚠️  Warning during matplotlib cleanup: {e}")
+        
+        # Close NetLogo connection
+        try:
+            print("🔌 Closing NetLogo connection...")
             self.netlogo.kill_workspace()
-        except:
-            pass
+            print("✅ NetLogo workspace closed")
+        except Exception as e:
+            print(f"⚠️  Warning during workspace cleanup: {e}")
+        
+        # Skip JVM shutdown - it hangs, let os._exit() handle it
+        print("⚡ Skipping JVM shutdown (will force exit)...")
+        
+        # Give a brief moment for file operations to complete
+        import time
+        time.sleep(0.2)
 
 
 def analyze_dqn_results(results):
@@ -1216,8 +1252,6 @@ def main():
         print("DQN SIMULATION COMPLETE!")
         print("="*60)
         
-        sim.close()
-        
     except FileNotFoundError as e:
         print(f"\nFILE ERROR: {e}")
         print("\nPlease check:")
@@ -1232,6 +1266,18 @@ def main():
         print("1. Ensure NetLogo is installed")
         print("2. Install required packages: pip install pynetlogo numpy pandas matplotlib tensorflow")
         print("3. Close any open NetLogo instances")
+    
+    finally:
+        # Always cleanup, even if errors occurred
+        if 'sim' in locals() and sim is not None:
+            try:
+                sim.close()
+            except:
+                pass
+        print("\n🔚 Program terminated successfully")
+        
+        # Force immediate exit (bypasses cleanup handlers that might hang)
+        os._exit(0)
 
 
 if __name__ == "__main__":

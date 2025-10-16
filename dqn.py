@@ -365,13 +365,9 @@ class MultiAgentDQNEnvironment:
     def calculate_rewards(self, pre_states, post_states, actions, died_agents):
         """
         Calculate rewards for all agents
-        
         New reward structure:
         - 0 for most actions (movement, consumption, harvesting)
         - Large negative reward (-100) for death
-        - Moderate negative reward (-20) for complete tax evasion when caught
-        - Small negative reward (-10) for partial payment when caught
-        - Zero reward for full tax payment (compliance)
         """
         rewards = {}
         
@@ -386,19 +382,9 @@ class MultiAgentDQNEnvironment:
                 action = actions.get(turtle_id, 0)
                 
                 reward = 0.0  # Default: zero reward for most actions
-                
-                # Punishment-based rewards (only when punishment status changes)
-                if not pre_punished and post_punished:
-                    # Agent got punished this turn - check what tax action they took
-                    if action == 8:  # EVADE action (index 8)
-                        reward = 0  # Severe punishment for complete evasion
-                    elif action == 7:  # PAY_PARTIAL action (index 7)
-                        reward = 0  # Less severe punishment for partial payment
-                    # PAY_FULL (index 6) gets 0 reward (no additional penalty)
-                
                 rewards[turtle_id] = reward
             else:
-                # Agent disappeared (shouldn't happen)
+                # Agent disappeared
                 rewards[turtle_id] = self.death_penalties
                 
         return rewards

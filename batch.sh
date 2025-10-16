@@ -27,7 +27,7 @@ echo "  MPLBACKEND=$MPLBACKEND"
 # Run the Python script
 echo "Starting DQN run at $(date)"
 
-python dqn.py  # run file
+python -u dqn.py  # -u flag disables output buffering
 
 # the comment below specifies how you would run a file with inputs
 # python temp.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --job_type "$JOB_NAME" --job_id "$SLURM_JOB_ID"

@@ -1,0 +1,11 @@
+{
+  "state_size": 10,
+  "total_action_size": 9,
+  "movement_action_size": 4,
+  "tax_action_size": 3,
+  "epsilon": 0.818648829478636,
+  "learning_rate": 0.001,
+  "batch_size": 32,
+  "memory_size": 10000,
+  "suffix": "final"
+}

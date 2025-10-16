@@ -5,7 +5,7 @@
 #SBATCH --nodes=1 # only use multiple if you are doing parallel computing e.g MPI
 #SBATCH --ntasks-per-node=1 
 #SBATCH --cpus-per-task=12  # Change as you see fit               
-#SBATCH --partition=stampede # 3 options stampede , bigbatch and biggpu
+#SBATCH --partition=bigbatch # 3 options stampede , bigbatch and biggpu
 #SBATCH --time=3-00:00:00  # max time you want to give your program (this is 3 days)  
 
 # Define paths

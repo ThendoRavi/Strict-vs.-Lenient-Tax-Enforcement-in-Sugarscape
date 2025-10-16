@@ -36,7 +36,7 @@ class DQNAgent:
         self.memory = deque(maxlen=10000)
         self.epsilon = 1.0  # exploration parameter
         self.epsilon_min = 0.01
-        self.epsilon_decay = 0.995
+        self.epsilon_decay = 0.999
         self.learning_rate = learning_rate
         self.gamma = 0.95  # discount factor
         self.batch_size = 32
@@ -1107,7 +1107,7 @@ def main():
         traceback.print_exc()
         return
     
-    TEST_MODE = True  # Set to False for full experiments
+    TEST_MODE = False  # Set to False for full experiments
     USE_GUI = False   # Always False for cluster compatibility
     
     # Set up logging for cluster runs
@@ -1157,7 +1157,7 @@ def main():
                     'mode': 'strict',
                     'duration': 50,
                     'years': 200,  # Full test - 200 years
-                    'episodes': 3  # Full test - 3 episodes
+                    'episodes': 1  # Full test - 3 episodes
                 }
             ]
         else:
@@ -1182,10 +1182,10 @@ def main():
                     'episodes': 10
                 },
                 {
-                    'name': 'dqn_lenient_medium_audit',
+                    'name': 'dqn_strict_medium_audit',
                     'audit_rate': 0.5,
-                    'mode': 'lenient',
-                    'duration': 30,
+                    'mode': 'strict',
+                    'duration': 50,
                     'years': 1000,
                     'episodes': 10
                 }

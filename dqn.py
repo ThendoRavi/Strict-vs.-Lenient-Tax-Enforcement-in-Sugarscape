@@ -1166,26 +1166,26 @@ def main():
             
             experiments = [
                 {
-                    'name': 'dqn_strict_low_audit',
+                    'name': 'dqn_lenient_low_audit',
                     'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 10
                 },
                 {
-                    'name': 'dqn_strict_high_audit',
+                    'name': 'dqn_lenient_high_audit',
                     'audit_rate': 0.8,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 10
                 },
                 {
-                    'name': 'dqn_strict_medium_audit',
+                    'name': 'dqn_lenient_medium_audit',
                     'audit_rate': 0.5,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 10
                 }

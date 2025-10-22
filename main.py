@@ -1518,7 +1518,7 @@ def analyze_dqn_results(results):
     # Adjust subplot spacing
     plt.tight_layout()
     # Save figure to file
-    plt.savefig('results/dqn_summary_plot_strict.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/dqn_summary_plot_lenient.png', dpi=300, bbox_inches='tight')
     # Close figure to free memory
     plt.close()
     
@@ -1646,6 +1646,7 @@ def main():
     try:
         sim = DQNTaxSimulation(netlogo_path, gui=USE_GUI)
         print(f"Successfully initialized DQN simulation")
+        print(f"   NetLogo path: {netlogo_path}")
         print(f"   GUI mode: {USE_GUI}")
     except Exception as e:
         print(f"Failed to initialize simulation: {e}")
@@ -1719,77 +1720,77 @@ def main():
             # Full experimental suite with multiple conditions
             experiments = [
                 {
-                    'name': 'dqn_strict_low_audit_low_duration',
+                    'name': 'dqn_lenient_low_audit_low_duration',
                     'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 25,
+                    'mode': 'lenient',
+                    'duration': 5,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_medium_audit_low_duration',
+                    'name': 'dqn_lenient_medium_audit_low_duration',
                     'audit_rate': 0.5,
-                    'mode': 'strict',
-                    'duration': 25,
+                    'mode': 'lenient',
+                    'duration': 5,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_high_audit_low_duration',
+                    'name': 'dqn_lenient_high_audit_low_duration',
                     'audit_rate': 0.8,
-                    'mode': 'strict',
-                    'duration': 25,
+                    'mode': 'lenient',
+                    'duration': 5,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_low_audit_medium_duration',
+                    'name': 'dqn_lenient_low_audit_medium_duration',
                     'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 35,
+                    'mode': 'lenient',
+                    'duration': 10,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_medium_audit_medium_duration',
+                    'name': 'dqn_lenient_medium_audit_medium_duration',
                     'audit_rate': 0.5,
-                    'mode': 'strict',
-                    'duration': 35,
+                    'mode': 'lenient',
+                    'duration': 10,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_high_audit_medium_duration',
+                    'name': 'dqn_lenient_high_audit_medium_duration',
                     'audit_rate': 0.8,
-                    'mode': 'strict',
-                    'duration': 35,
+                    'mode': 'lenient',
+                    'duration': 10,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_low_audit_high_duration',
+                    'name': 'dqn_lenient_low_audit_high_duration',
                     'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_medium_audit_high_duration',
+                    'name': 'dqn_lenient_medium_audit_high_duration',
                     'audit_rate': 0.5,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_high_audit_high_duration',
+                    'name': 'dqn_lenient_high_audit_high_duration',
                     'audit_rate': 0.8,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 100
-                }
+                },
             ]
         
         # Initialize storage for all experiment results

@@ -5,7 +5,7 @@
 #SBATCH --nodes=1 # only use multiple if you are doing parallel computing e.g MPI
 #SBATCH --ntasks-per-node=1 
 #SBATCH --cpus-per-task=12  # Change as you see fit               
-#SBATCH --partition=bigbatch # 3 options stampede , bigbatch and biggpu
+#SBATCH --partition=biggpu # 3 options stampede , bigbatch and biggpu
 #SBATCH --time=3-00:00:00  # max time you want to give your program (this is 3 days)  
 
 # Define paths
@@ -27,7 +27,7 @@ echo "  MPLBACKEND=$MPLBACKEND"
 # Run the Python script
 echo "Starting DQN run at $(date)"
 
-python -u dqn.py  # -u flag disables output buffering
+python -u main.py  # -u flag disables output buffering
 
 # the comment below specifies how you would run a file with inputs
 # python temp.py --input "$INPUT_FILE" --output "$OUTPUT_DIR" --job_type "$JOB_NAME" --job_id "$SLURM_JOB_ID"

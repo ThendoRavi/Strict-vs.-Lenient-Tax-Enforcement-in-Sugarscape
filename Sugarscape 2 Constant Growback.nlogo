@@ -92,7 +92,7 @@ to go
   ; Always run the simulation step when go is called
   ; (python-action-received flag is used to track when actions were sent)
   update-punishment-status
-  
+
   ; Only handle tax during audit periods (when actions were received)
   if python-action-received [
     handle-tax
@@ -179,19 +179,24 @@ to handle-tax
   ]
 end
 
+;Tax Bracket
 to-report calculate-tax
-  if sugar < 10 [ report sugar * 0.1 ]
-  if sugar >= 10 and sugar < 30 [ report sugar * 0.2 ]
-  if sugar >= 30 and sugar < 50 [ report sugar * 0.3 ]
-  report sugar * 0.4
+  if sugar >= 0 and sugar < 10 [ report sugar * 0.0 ]
+  if sugar >= 10 and sugar < 30 [ report sugar * 0.1 ]
+  if sugar >= 30 and sugar < 60 [ report sugar * 0.2 ]
+  if sugar >= 60 and sugar < 85 [ report sugar * 0.35 ]
+  report sugar * 0.5
 end
 
 to audit-and-punish
   ; Only audit every 50 ticks (audit frequency controlled by Python)
   if ticks mod 50 = 0 [
+    ; Only audit unpunished agents
     let candidates turtles with [ not is-punished? ]
     let audited-sample n-of (audit-percentage * count candidates) candidates
+
     ask audited-sample [
+      ; Detected non-compliance
       if tax-paid < tax-due [
         ; Record this action led to punishment
         if length action-history > 0 [
@@ -325,7 +330,7 @@ to receive-movement-commands [movement-list]
   foreach movement-list [ command ->
     let turtle-id item 0 command
     let direction item 1 command
-    
+
     ask turtle turtle-id [
       if not is-punished? [  ; Only move if not punished
         execute-movement direction
@@ -338,12 +343,12 @@ to execute-movement [direction]
   ; Execute movement command (UP, DOWN, LEFT, RIGHT)
   let new-x xcor
   let new-y ycor
-  
+
   if direction = "UP" [ set new-y ycor + 1 ]
   if direction = "DOWN" [ set new-y ycor - 1 ]
   if direction = "LEFT" [ set new-x xcor - 1 ]
   if direction = "RIGHT" [ set new-x xcor + 1 ]
-  
+
   ; Check bounds and move if valid
   if new-x >= 0 and new-x <= 49 and new-y >= 0 and new-y <= 49 [
     let target-patch patch new-x new-y
@@ -456,7 +461,7 @@ to do-visualization
         ; No tax history yet - use neutral color
         set color black
       ]
-      
+
       ; Make punished agents slightly darker to distinguish them
       if is-punished? [
         set color color - 2  ; Darker shade of their compliance color

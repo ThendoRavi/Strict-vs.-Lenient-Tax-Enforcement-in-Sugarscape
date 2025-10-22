@@ -1518,7 +1518,7 @@ def analyze_dqn_results(results):
     # Adjust subplot spacing
     plt.tight_layout()
     # Save figure to file
-    plt.savefig('results/dqn_summary_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/dqn_summary_plot_lenient.png', dpi=300, bbox_inches='tight')
     # Close figure to free memory
     plt.close()
     

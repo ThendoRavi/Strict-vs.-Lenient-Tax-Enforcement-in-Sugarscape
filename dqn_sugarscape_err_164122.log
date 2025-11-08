@@ -1,0 +1,2066 @@
+2025-10-22 14:55:20.841974: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-22 14:55:29.147642: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-22 14:56:00.689698: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Picked up JAVA_TOOL_OPTIONS: -Djava.awt.headless=true -Xmx4g
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1761137794.852473 1961996 gpu_device.cc:2020] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 22342 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:17:00.0, compute capability: 8.6
+2025-10-22 14:56:39.954676: I external/local_xla/xla/service/service.cc:163] XLA service 0x7f0cc0003f90 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-10-22 14:56:39.954718: I external/local_xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA GeForce RTX 3090, Compute Capability 8.6
+2025-10-22 14:56:40.129236: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-10-22 14:56:40.595733: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91002
+2025-10-22 14:56:40.668821: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:40.668856: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:41.545059: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+I0000 00:00:1761137803.070264 1962151 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2025-10-22 14:56:46.922579: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:46.922620: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:46.922638: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:47.861508: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_1364', 520 bytes spill stores, 520 bytes spill loads
+
+2025-10-22 14:56:47.925336: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_1347', 520 bytes spill stores, 520 bytes spill loads
+
+2025-10-22 14:56:54.666948: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:54.666982: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:55.346559: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:56:55.437473: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:56:56.216324: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:56.216359: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:56.828478: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:56:56.968180: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:56:57.816818: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:57.816856: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:58.458972: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:56:58.549985: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:56:59.480426: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:56:59.480461: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:00.158167: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:00.172617: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:00.949528: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:00.949573: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:01.685025: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:01.726444: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:08.959679: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:08.959717: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:09.555377: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:09.618093: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:10.387831: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:10.387863: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:11.123249: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:11.124010: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:12.465713: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:12.465751: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:13.121916: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:13.149643: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:14.318375: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:14.318411: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:15.018025: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:15.027536: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:18.751705: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:18.751777: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:19.397783: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:19.425682: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:21.799938: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:21.799973: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:22.418455: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:22.512472: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:25.391844: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:25.391877: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:26.089356: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 14:57:26.108416: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:26.816323: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:26.816358: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 14:57:27.480435: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 14:57:27.568008: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 15:01:23.333224: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 15:01:23.333645: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 15:01:23.940691: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 15:01:24.126141: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+2025-10-22 15:01:29.214364: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 15:01:29.214402: I external/local_xla/xla/service/gpu/autotuning/dot_search_space.cc:208] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+2025-10-22 15:01:29.886090: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 20 bytes spill stores, 20 bytes spill loads
+
+2025-10-22 15:01:29.990216: I external/local_xla/xla/stream_executor/cuda/subprocess_compilation.cc:346] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_dot_55', 24 bytes spill stores, 24 bytes spill loads
+
+slurmstepd-mscluster45: error: *** JOB 164122 ON mscluster45 CANCELLED AT 2025-10-25T14:55:16 DUE TO TIME LIMIT ***
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 979, in run_episode
+    self.netlogo.command('go')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/main.py", line 880, in run_episode
+    self.netlogo.command(f'set-params {audit_rate} "{mode}" {duration}')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pynetlogo/core.py", line 272, in command
+    self.link.command(netlogo_command)
+    ^^^^^^^^^^^^^^^^^
+jpype._core.JVMNotRunning: Java Virtual Machine is not running

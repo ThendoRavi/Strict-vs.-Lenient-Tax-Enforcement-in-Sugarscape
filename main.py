@@ -28,13 +28,6 @@ The audit cycle phase (feature 9) is a critical component that allows agents to 
 temporally-aware strategies. In the NetLogo simulation, audits occur every 50 ticks
 (see 'Sugarscape 2 Constant Growback.nlogo' line: "if ticks mod 50 = 0").
 
-This feature works by:
-- Calculating: current_tick % audit_frequency (50) = position in cycle (0-49)
-- Normalizing: position / 50 = phase value (0.0 to 0.98)
-- At tick 0, 50, 100, etc.: phase ≈ 0.0 (AUDIT HAPPENING - tax decision required)
-- At tick 25, 75, 125, etc.: phase = 0.5 (mid-cycle - no tax decision, just observe)
-- At tick 49, 99, 149, etc.: phase ≈ 0.98 (next tick is audit)
-
 IMPORTANT: Tax actions (indices 6-8) are ONLY valid when is_audit_period=True
 (i.e., when phase ≈ 0.0). During other phases, agents can only move and consume.
 
@@ -63,8 +56,7 @@ known good actions.
 import os
 import sys
 
-# Set Java Virtual Machine options before any library imports
-# This prevents GUI rendering issues when running on headless servers
+
 os.environ['JAVA_TOOL_OPTIONS'] = '-Djava.awt.headless=true -Xmx4g'
 # Disable display to force command-line only operation
 os.environ['DISPLAY'] = ''
@@ -132,7 +124,8 @@ class DQNAgent:
         
       
         self.learning_rate = learning_rate
-        # Set discount factor for future rewards (values near 1 prioritize long-term gains)
+
+        # Set discount factor for future rewards
         self.gamma = 0.95
         # Set mini-batch size for training updates
         self.batch_size = 32
@@ -175,7 +168,6 @@ class DQNAgent:
         
         # Configure model training parameters
         model.compile(
-            # Adam optimizer adapts learning rate during training
             optimizer=keras.optimizers.Adam(learning_rate=self.learning_rate),
             loss='mse'
         )
@@ -227,9 +219,8 @@ class DQNAgent:
             return random.randrange(self.action_size)
         
         # Exploitation: use Q-network to select best action
-        # Add batch dimension (network expects batch of states)
         state_tensor = tf.expand_dims(state, 0)
-        # Compute Q-values for all actions (inference mode, no training)
+        # Compute Q-values for all actions
         q_values = self.q_network(state_tensor, training=False)
         # Return action with maximum Q-value
         return np.argmax(q_values[0])
@@ -249,7 +240,6 @@ class DQNAgent:
             return
         
         # Sample random mini-batch from replay memory
-        # Random sampling breaks temporal correlations
         batch = random.sample(self.memory, self.batch_size)
         
         # Extract components from experience tuples into arrays
@@ -260,11 +250,9 @@ class DQNAgent:
         dones = np.array([e[4] for e in batch])
         
         # Predict current Q-values for actions taken
-        # These will be updated using Bellman equation
         current_q_values = self.q_network(states, training=False).numpy()
         
         # Predict Q-values for next states using target network
-        # Target network provides stable targets for learning
         next_q_values = self.target_network(next_states, training=False).numpy()
         
         # Update Q-values using Bellman equation for each experience
@@ -278,7 +266,6 @@ class DQNAgent:
                 current_q_values[i][actions[i]] = rewards[i] + self.gamma * np.max(next_q_values[i])
         
         # Train network to predict updated Q-values
-        # Network learns to satisfy Bellman optimality equation
         self.q_network.fit(states, current_q_values, epochs=1, verbose=0, batch_size=self.batch_size)
         
         # Decay exploration rate to shift from exploration to exploitation
@@ -338,18 +325,20 @@ class MultiAgentDQNEnvironment:
         """
         # Store population size
         self.n_agents = n_agents
-        # Define dimensionality of state representation (9 features including temporal awareness)
+
         self.state_size = 9
         
         # Define action space components
-        # Movement actions: directional movement on grid
-        self.movement_actions = 4  # UP, DOWN, LEFT, RIGHT
+        # UP, DOWN, LEFT, RIGHT
+        self.movement_actions = 4  
         
         # Consumption actions: resource gathering decisions
-        self.consumption_actions = 2  # CONSUME, HARVEST
+        # CONSUME, HARVEST
+        self.consumption_actions = 2  
         
         # Tax compliance actions: payment decisions during audits
-        self.tax_actions = 3  # PAY_FULL, PAY_PARTIAL, EVADE
+        # PAY_FULL, PAY_PARTIAL, EVADE  
+        self.tax_actions = 3  
         
         # Calculate total action space size
         self.total_action_size = self.movement_actions + self.consumption_actions + self.tax_actions
@@ -418,7 +407,6 @@ class MultiAgentDQNEnvironment:
             Normalized state vector (numpy array) with 9 features
         """
         # Normalize sugar storage to [0,1] range
-        # Cap at expected maximum to prevent outliers
         max_expected_sugar = 100.0
         sugar_storage = min(sugar_level / max_expected_sugar, 1.0)
         
@@ -446,11 +434,6 @@ class MultiAgentDQNEnvironment:
         
         # Calculate audit cycle phase for temporal awareness
         # Returns value in [0, 1) indicating position in 50-tick audit cycle
-        # CRITICAL: Tax decisions only executable when phase ≈ 0.0 (audit period)
-        # Phase helps agent learn temporal patterns and consequences of decisions
-        # Value ≈ 0.0 = audit happening NOW (must choose: pay/partial/evade)
-        # Value ≈ 0.5 = mid-cycle (observe consequences of last audit's decision)
-        # Value ≈ 0.98 = audit coming next tick (no action yet, but learn pattern)
         audit_phase = (self.current_tick % self.audit_frequency) / self.audit_frequency
         
         # Construct complete state vector with 9 features
@@ -489,20 +472,29 @@ class MultiAgentDQNEnvironment:
         for state_data in raw_states:
             # Verify state data contains minimum required elements
             if len(state_data) >= 8:
-                # Extract basic state components
-                turtle_id = int(state_data[0])      # Agent unique identifier
-                sugar_level = state_data[1]         # Current resource level
-                punished = state_data[2]            # Punishment flag
-                history_len = state_data[3]         # Length of decision history
-                last_action = state_data[4]         # Most recent action taken
-                punishment_count = state_data[5]    # Total punishments received
+                # Agent unique identifier
+                turtle_id = int(state_data[0])
+                # Current resource level      
+                sugar_level = state_data[1]
+                # Punishment flag         
+                punished = state_data[2]
+                # Length of decision history            
+                history_len = state_data[3]
+                # Most recent action taken       
+                last_action = state_data[4]
+                # # Total punishments received         
+                punishment_count = state_data[5]    
                 
                 # Extract spatial coordinates if available (extended state format)
                 if len(state_data) >= 10:
-                    evasion_success_rate = state_data[6]    # Historical evasion success
-                    compliance_pattern = state_data[7]      # Compliance behavior pattern
-                    x_pos = state_data[8]                   # X coordinate
-                    y_pos = state_data[9]                   # Y coordinate
+                    # Historical evasion success
+                    evasion_success_rate = state_data[6]
+                    # Compliance behavior pattern    
+                    compliance_pattern = state_data[7]
+                    # X coordinate      
+                    x_pos = state_data[8]
+                    # Y coordinate                   
+                    y_pos = state_data[9]                   
                 else:
                     # Fallback to random positions for older state format
                     x_pos = np.random.randint(0, 50)
@@ -528,10 +520,14 @@ class MultiAgentDQNEnvironment:
                 
                 # Store processed state with metadata
                 processed_states[turtle_id] = {
-                    'state': normalized_state,      # Normalized state vector
-                    'sugar_level': sugar_level,     # Raw sugar level
-                    'punished': punished,           # Punishment status
-                    'raw_data': state_data          # Original state data
+                    # Normalized state vector
+                    'state': normalized_state,      
+                    # Raw sugar level
+                    'sugar_level': sugar_level,     
+                    # Punishment status
+                    'punished': punished,           
+                    # Original state data
+                    'raw_data': state_data          
                 }
                 
         return processed_states
@@ -556,14 +552,16 @@ class MultiAgentDQNEnvironment:
         
         # Movement actions legal unless agent is punished
         if not is_punished:
-            legal_mask[0:4] = True  # Enable UP, DOWN, LEFT, RIGHT
+            # Enable UP, DOWN, LEFT, RIGHT
+            legal_mask[0:4] = True  
         
         # Consumption/harvest actions always legal
-        legal_mask[4:6] = True  # Enable CONSUME, HARVEST
+        legal_mask[4:6] = True  
         
         # Tax compliance actions only legal during audit periods
         if is_audit_period:
-            legal_mask[6:9] = True  # Enable PAY_FULL, PAY_PARTIAL, EVADE
+            # Enable PAY_FULL, PAY_PARTIAL, EVADE
+            legal_mask[6:9] = True  
         
         return legal_mask
 
@@ -610,7 +608,6 @@ class MultiAgentDQNEnvironment:
             legal_mask = self.get_legal_actions(is_audit_period, is_punished)
             
             # Mask illegal actions by setting their Q-values to negative infinity
-            # This ensures they won't be selected even if randomly chosen
             masked_q_values = np.where(legal_mask, q_values, -np.inf)
             
             # Apply epsilon-greedy policy with legal action constraints
@@ -657,13 +654,16 @@ class MultiAgentDQNEnvironment:
             
             # Handle tax compliance actions (indices 6-8), only during audits
             elif action in [6, 7, 8] and is_audit_period:
-                if action == 6:  # PAY_FULL
+                # PAY_FULL
+                if action == 6:  
                     # NetLogo uses 0 for full payment
                     tax_decisions.append((turtle_id, 0))
-                elif action == 7:  # PAY_PARTIAL
+                    # PAY_PARTIAL
+                elif action == 7:  
                     # NetLogo uses 1 for partial payment
                     tax_decisions.append((turtle_id, 1))
-                elif action == 8:  # EVADE
+                    # EVADE
+                elif action == 8:  
                     # NetLogo uses 2 for evasion
                     tax_decisions.append((turtle_id, 2))
             
@@ -699,23 +699,18 @@ class MultiAgentDQNEnvironment:
         for turtle_id in pre_states:
             if turtle_id in died_agents:
                 # Agent died: apply large negative penalty
-                # This strongly discourages actions leading to death
                 rewards[turtle_id] = self.death_penalties
             elif turtle_id in post_states:
                 # Agent survived: calculate standard reward
-                # Extract pre and post punishment status
                 pre_punished = pre_states[turtle_id]['punished']
                 post_punished = post_states[turtle_id]['punished']
                 # Get action taken by agent
                 action = actions.get(turtle_id, 0)
                 
-                # Default reward is zero for most actions
-                # Survival itself is the primary objective
                 reward = 0.0
                 rewards[turtle_id] = reward
             else:
                 # Agent disappeared without being in death list
-                # Treat as death for consistency
                 rewards[turtle_id] = self.death_penalties
                 
         return rewards
@@ -755,7 +750,6 @@ class MultiAgentDQNEnvironment:
                     next_state = post_states[turtle_id]['state']
                 
                 # Store experience tuple in replay memory
-                # This enables experience replay for stable learning
                 self.agent.remember(pre_state, action, reward, next_state, done)
         
         # Trigger neural network training on batch of experiences
@@ -810,10 +804,10 @@ class DQNTaxSimulation:
                 try:
                     # Method 1: Specify NetLogo version explicitly
                     self.netlogo = pynetlogo.NetLogoLink(
-                        gui=False,                      # Disable GUI
-                        netlogo_home=netlogo_path,      # Path to NetLogo installation
-                        netlogo_version='6.4',          # NetLogo version number
-                        jvm_home=None                   # Auto-detect Java installation
+                        gui=False,                      
+                        netlogo_home=netlogo_path,      
+                        netlogo_version='6.4',          
+                        jvm_home=None                   
                     )
                     print("Connected using netlogo_version parameter")
                 except TypeError:

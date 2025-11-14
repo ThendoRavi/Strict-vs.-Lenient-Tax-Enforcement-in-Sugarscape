@@ -1512,7 +1512,7 @@ def analyze_dqn_results(results):
     # Adjust subplot spacing
     plt.tight_layout()
     # Save figure to file
-    plt.savefig('results/dqn_summary_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/dqn_summary_plot_100.png', dpi=300, bbox_inches='tight')
     # Close figure to free memory
     plt.close()
     
@@ -1719,7 +1719,7 @@ def main():
                     'mode': 'lenient',
                     'duration': 20,
                     'years': 1000,
-                    'episodes': 50
+                    'episodes': 100
                 },
                 {
                     'name': 'dqn_lenient_high_audit_high_duration',
@@ -1727,7 +1727,7 @@ def main():
                     'mode': 'lenient',
                     'duration': 20,
                     'years': 1000,
-                    'episodes': 50
+                    'episodes': 100
                 },
                 {
                     'name': 'dqn_strict_medium_audit_high_duration',
@@ -1735,7 +1735,7 @@ def main():
                     'mode': 'strict',
                     'duration': 50,
                     'years': 1000,
-                    'episodes': 50
+                    'episodes': 100
                 },
                 {
                     'name': 'dqn_strict_high_audit_high_duration',
@@ -1743,7 +1743,7 @@ def main():
                     'mode': 'strict',
                     'duration': 50,
                     'years': 1000,
-                    'episodes': 50
+                    'episodes': 100
                 },
             ]
         

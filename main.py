@@ -1714,58 +1714,18 @@ def main():
             # Full experimental suite with multiple conditions
             experiments = [
                 {
-                    'name': 'dqn_strict_low_audit_low_duration',
-                    'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 25,
-                    'years': 1000,
-                    'episodes': 100
-                },
-                {
-                    'name': 'dqn_strict_medium_audit_low_duration',
+                    'name': 'dqn_lenient_medium_audit_high_duration',
                     'audit_rate': 0.5,
-                    'mode': 'strict',
-                    'duration': 25,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 100
                 },
                 {
-                    'name': 'dqn_strict_high_audit_low_duration',
+                    'name': 'dqn_lenient_high_audit_high_duration',
                     'audit_rate': 0.8,
-                    'mode': 'strict',
-                    'duration': 25,
-                    'years': 1000,
-                    'episodes': 100
-                },
-                {
-                    'name': 'dqn_strict_low_audit_medium_duration',
-                    'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 35,
-                    'years': 1000,
-                    'episodes': 100
-                },
-                {
-                    'name': 'dqn_strict_medium_audit_medium_duration',
-                    'audit_rate': 0.5,
-                    'mode': 'strict',
-                    'duration': 30,
-                    'years': 1000,
-                    'episodes': 100
-                },
-                {
-                    'name': 'dqn_strict_high_audit_medium_duration',
-                    'audit_rate': 0.8,
-                    'mode': 'strict',
-                    'duration': 35,
-                    'years': 1000,
-                    'episodes': 100
-                },
-                {
-                    'name': 'dqn_strict_low_audit_high_duration',
-                    'audit_rate': 0.3,
-                    'mode': 'strict',
-                    'duration': 50,
+                    'mode': 'lenient',
+                    'duration': 20,
                     'years': 1000,
                     'episodes': 100
                 },

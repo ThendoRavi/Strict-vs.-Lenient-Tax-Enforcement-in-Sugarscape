@@ -1,0 +1,3152 @@
+Environment variables set:
+  JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Xmx4g
+  DISPLAY=
+  MPLBACKEND=Agg
+Starting DQN run at Fri Nov 14 03:35:07 PM SAST 2025
+Found NetLogo at: /home-mscluster/travhengani/NetLogo-6.4.0-64
+
+Starting DQN run at Fri Nov 14 15:36:02 2025
+Initializing NetLogo connection...
+   Path: /home-mscluster/travhengani/NetLogo-6.4.0-64
+   GUI mode: FORCED FALSE (headless)
+   Java options: -Djava.awt.headless=true -Xmx4g
+Trying alternative connection method...
+Connected using basic parameters
+Loading NetLogo model: Sugarscape 2 Constant Growback.nlogo
+NetLogo model loaded successfully
+Successfully initialized DQN simulation
+   NetLogo path: /home-mscluster/travhengani/NetLogo-6.4.0-64
+   GUI mode: True
+============================================================
+DEEP Q-NETWORK TAX COMPLIANCE SIMULATION
+============================================================
+
+Using TensorFlow version: 2.20.0
+Action spaces:
+   - Movement: UP, DOWN, LEFT, RIGHT
+   - Tax compliance: Pay full, Pay partial, Evade
+Death penalty: Large negative reward for learning
+
+Initializing DQN simulation...
+Initializing NetLogo connection...
+   Path: /home-mscluster/travhengani/NetLogo-6.4.0-64
+   GUI mode: FORCED FALSE (headless)
+   Java options: -Djava.awt.headless=true -Xmx4g
+Trying alternative connection method...
+Connected using basic parameters
+Loading NetLogo model: Sugarscape 2 Constant Growback.nlogo
+NetLogo model loaded successfully
+
+Testing Python-NetLogo connection...
+Testing DQN-NetLogo connection...
+Running setup...
+Setup complete
+Population: 200 turtles
+Getting turtle states...
+Got states for 200 agents
+Processed 200 states for neural network
+Sample state shape: (9,)
+Sample state values: [0.         0.         0.02040816]...
+Generated 200 actions
+Action distribution: {'PAY_FULL': 31, 'UP': 16, 'RIGHT': 20, 'LEFT': 25, 'NO_CONSUME': 21, 'PAY_PARTIAL': 22, 'CONSUME': 23, 'DOWN': 18, 'EVADE': 24}
+
+DQN CONNECTION TEST SUCCESSFUL
+
+============================================================
+
+RUNNING FULL DQN EXPERIMENTS
+----------------------------------------
+
+Experiment 1/4: dqn_lenient_medium_audit_high_duration
+
+Starting DQN experiment: dqn_lenient_medium_audit_high_duration
+   Parameters: audit=0.5, mode=lenient, duration=20
+   Neural Network: 9 inputs (9 features) -> 9 outputs
+   State features: sugar, health, x, y, punishment, last 3 tax decisions, audit phase
+   Action Space: 0-3=Move, 4-5=Consume, 6-8=Tax(Pay/Partial/Evade)
+   Death penalty: -100
+   Audit frequency: every 50 ticks (synchronized with NetLogo)
+   Temporal awareness: Agents know position in 50-tick audit cycle
+
+============================================================
+Episode 1/100 - Starting at 15:36:31
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+  Year 0: AUDIT PERIOD - agents making tax decisions
+    Actions: 92 move, 47 consume, 61 tax (took 0.308s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  [Year 0] Pop=200, Gini=0.210, Sugar=2940, Deaths=0
+
+Year 0 Summary:
+    Population: 200 (deaths this year: 0)
+    Economics: Gini=0.210, Total Sugar=2940
+    Tax Behavior: Compliance=65.0%, Evasion=28.0%
+    Learning: Epsilon=0.9990, Memory=200
+    Rewards: Current=0.0, Average=0.00
+    Actions so far: 92 move, 47 consume, 61 tax
+  [Year 1] Pop=200, Gini=0.219, Sugar=3050, Deaths=0
+  [Year 2] Pop=200, Gini=0.236, Sugar=3114, Deaths=0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-600.0, deaths=6, punishment=0.0
+    Rewards: total=-600.0, deaths=6, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+  [Year 10] Pop=172, Gini=0.316, Sugar=3818, Deaths=3
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+  [Year 20] Pop=152, Gini=0.343, Sugar=5145, Deaths=2
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-400.0, deaths=4, punishment=0.0
+    Rewards: total=-300.0, deaths=3, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 25: Regular period - movement and consumption only
+    Actions: 95 move, 47 consume, 0 tax (took 0.697s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-200.0, deaths=2, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [Year 30] Pop=138, Gini=0.302, Sugar=6796, Deaths=0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  [Year 49] Pop=134, Gini=0.295, Sugar=10043, Deaths=0
+  Year 50: AUDIT PERIOD - agents making tax decisions
+    Actions: 56 move, 33 consume, 45 tax (took 0.073s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=7904, epsilon=0.9512, added 134 experiences
+  [Year 50] Pop=134, Gini=0.242, Sugar=6305, Deaths=0
+
+Year 50 Summary:
+    Population: 134 (deaths this year: 0)
+    Economics: Gini=0.242, Total Sugar=6305
+    Tax Behavior: Compliance=76.9%, Evasion=8.2%
+    Learning: Epsilon=0.9503, Memory=7904
+    Rewards: Current=0.0, Average=-129.41
+    Actions so far: 5151 move, 2647 consume, 106 tax
+  [Year 51] Pop=134, Gini=0.243, Sugar=6472, Deaths=0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 75: Regular period - movement and consumption only
+    Actions: 86 move, 45 consume, 0 tax (took 0.069s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  Year 100: AUDIT PERIOD - agents making tax decisions
+    Actions: 55 move, 36 consume, 40 tax (took 0.067s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.9048, added 0 experiences
+  [Year 100] Pop=131, Gini=0.246, Sugar=8491, Deaths=0
+
+Year 100 Summary:
+    Population: 131 (deaths this year: 0)
+    Economics: Gini=0.246, Total Sugar=8491
+    Tax Behavior: Compliance=81.7%, Evasion=13.0%
+    Learning: Epsilon=0.9039, Memory=10000
+    Rewards: Current=0.0, Average=-68.32
+    Actions so far: 9407 move, 4920 consume, 146 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 125: Regular period - movement and consumption only
+    Actions: 83 move, 44 consume, 0 tax (took 0.065s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  Year 150: AUDIT PERIOD - agents making tax decisions
+    Actions: 44 move, 34 consume, 49 tax (took 0.089s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.8606, added 0 experiences
+
+Year 150 Summary:
+    Population: 127 (deaths this year: 0)
+    Economics: Gini=0.250, Total Sugar=9733
+    Tax Behavior: Compliance=76.4%, Evasion=11.0%
+    Learning: Epsilon=0.8598, Memory=10000
+    Rewards: Current=0.0, Average=-48.34
+    Actions so far: 13214 move, 7469 consume, 195 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 175: Regular period - movement and consumption only
+    Actions: 66 move, 60 consume, 0 tax (took 0.066s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  Year 200: AUDIT PERIOD - agents making tax decisions
+    Actions: 51 move, 24 consume, 51 tax (took 0.063s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.8186, added 0 experiences
+
+Year 200 Summary:
+    Population: 126 (deaths this year: 0)
+    Economics: Gini=0.270, Total Sugar=10556
+    Tax Behavior: Compliance=75.4%, Evasion=12.7%
+    Learning: Epsilon=0.8178, Memory=10000
+    Rewards: Current=0.0, Average=-36.82
+    Actions so far: 16788 move, 10162 consume, 246 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 225: Regular period - movement and consumption only
+    Actions: 70 move, 52 consume, 0 tax (took 0.065s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 250: AUDIT PERIOD - agents making tax decisions
+    Actions: 42 move, 37 consume, 42 tax (took 0.071s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.7787, added 0 experiences
+
+Year 250 Summary:
+    Population: 121 (deaths this year: 0)
+    Economics: Gini=0.255, Total Sugar=10352
+    Tax Behavior: Compliance=86.0%, Evasion=5.0%
+    Learning: Epsilon=0.7779, Memory=10000
+    Rewards: Current=0.0, Average=-31.47
+    Actions so far: 20280 move, 12764 consume, 288 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 275: Regular period - movement and consumption only
+    Actions: 75 move, 45 consume, 0 tax (took 0.072s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  Year 300: AUDIT PERIOD - agents making tax decisions
+    Actions: 36 move, 41 consume, 43 tax (took 0.084s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.7407, added 0 experiences
+
+Year 300 Summary:
+    Population: 120 (deaths this year: 0)
+    Economics: Gini=0.287, Total Sugar=11065
+    Tax Behavior: Compliance=78.3%, Evasion=12.5%
+    Learning: Epsilon=0.7400, Memory=10000
+    Rewards: Current=0.0, Average=-26.58
+    Actions so far: 23739 move, 15281 consume, 331 tax
+    Rewards: total=-100.0, deaths=1, punishment=0.0
+  Year 325: Regular period - movement and consumption only
+    Actions: 72 move, 47 consume, 0 tax (took 0.062s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  Year 350: AUDIT PERIOD - agents making tax decisions
+    Actions: 45 move, 37 consume, 37 tax (took 0.081s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.7046, added 0 experiences
+
+Year 350 Summary:
+    Population: 119 (deaths this year: 0)
+    Economics: Gini=0.250, Total Sugar=10926
+    Tax Behavior: Compliance=83.2%, Evasion=10.9%
+    Learning: Epsilon=0.7039, Memory=10000
+    Rewards: Current=0.0, Average=-23.08
+    Actions so far: 26937 move, 18010 consume, 368 tax
+  Year 375: Regular period - movement and consumption only
+    Actions: 66 move, 53 consume, 0 tax (took 0.074s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+  Year 400: AUDIT PERIOD - agents making tax decisions
+    Actions: 51 move, 37 consume, 31 tax (took 0.072s)
+    Rewards: total=0.0, deaths=0, punishment=0.0
+    Training: memory=10000, epsilon=0.6702, added 0 experiences
+
+Year 400 Summary:
+    Population: 119 (deaths this year: 0)
+    Economics: Gini=0.248, Total Sugar=10998
+    Tax Behavior: Compliance=80.7%, Evasion=9.2%
+    Learning: Epsilon=0.6695, Memory=10000
+    Rewards: Current=0.0, Average=-20.20
+    Actions so far: 30075 move, 20791 consume, 399 tax
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 2/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 3/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 4/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 5/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 6/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 7/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 8/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 9/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 10/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 11/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 12/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 13/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 14/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 15/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 16/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 17/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 18/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 19/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 20/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 21/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 22/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 23/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 24/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 25/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 26/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 27/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 28/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 29/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 30/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 31/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 32/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 33/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 34/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 35/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 36/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 37/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 38/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 39/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 40/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 41/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 42/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 43/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 44/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 45/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 46/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 47/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 48/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 49/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 50/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 51/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 52/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 53/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 54/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 55/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 56/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 57/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 58/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 59/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 60/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 61/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 62/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 63/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 64/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 65/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 66/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 67/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 68/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 69/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 70/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 71/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 72/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 73/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 74/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 75/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 76/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 77/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 78/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 79/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 80/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 81/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 82/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 83/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 84/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 85/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 86/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 87/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 88/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 89/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 90/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 91/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 92/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 93/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 94/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 95/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 96/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 97/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 98/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 99/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 100/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+Saving final models...
+
+============================================================
+EXPERIMENT 'dqn_lenient_medium_audit_high_duration' COMPLETE
+============================================================
+Total time: 2.3 minutes (0.04 hours)
+Episodes completed: 0
+Final learning parameters:
+    - Epsilon: 0.658225
+    - Memory: 10,000 experiences
+    - Network updates: 418
+   Experiment 'dqn_lenient_medium_audit_high_duration' complete
+
+Experiment 2/4: dqn_lenient_high_audit_high_duration
+
+Starting DQN experiment: dqn_lenient_high_audit_high_duration
+   Parameters: audit=0.8, mode=lenient, duration=20
+   Neural Network: 9 inputs (9 features) -> 9 outputs
+   State features: sugar, health, x, y, punishment, last 3 tax decisions, audit phase
+   Action Space: 0-3=Move, 4-5=Consume, 6-8=Tax(Pay/Partial/Evade)
+   Death penalty: -100
+   Audit frequency: every 50 ticks (synchronized with NetLogo)
+   Temporal awareness: Agents know position in 50-tick audit cycle
+
+============================================================
+Episode 1/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 2/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 3/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 4/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 5/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 6/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 7/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 8/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 9/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 10/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 11/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 12/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 13/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 14/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 15/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 16/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 17/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 18/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 19/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 20/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 21/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 22/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 23/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 24/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 25/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 26/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 27/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 28/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 29/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 30/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 31/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 32/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 33/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 34/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 35/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 36/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 37/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 38/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 39/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 40/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 41/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 42/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 43/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 44/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 45/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 46/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 47/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 48/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 49/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 50/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 51/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 52/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 53/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 54/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 55/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 56/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 57/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 58/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 59/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 60/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 61/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 62/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 63/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 64/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 65/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 66/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 67/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 68/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 69/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 70/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 71/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 72/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 73/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 74/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 75/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 76/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 77/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 78/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 79/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 80/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 81/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 82/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 83/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 84/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 85/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 86/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 87/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 88/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 89/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 90/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 91/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 92/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 93/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 94/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 95/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 96/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 97/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 98/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 99/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 100/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=lenient, duration=20
+Error during episode: Java Virtual Machine is not running
+
+Saving final models...
+
+============================================================
+EXPERIMENT 'dqn_lenient_high_audit_high_duration' COMPLETE
+============================================================
+Total time: 0.0 minutes (0.00 hours)
+Episodes completed: 0
+Final learning parameters:
+    - Epsilon: 0.658225
+    - Memory: 10,000 experiences
+    - Network updates: 418
+   Experiment 'dqn_lenient_high_audit_high_duration' complete
+
+Experiment 3/4: dqn_strict_medium_audit_high_duration
+
+Starting DQN experiment: dqn_strict_medium_audit_high_duration
+   Parameters: audit=0.5, mode=strict, duration=50
+   Neural Network: 9 inputs (9 features) -> 9 outputs
+   State features: sugar, health, x, y, punishment, last 3 tax decisions, audit phase
+   Action Space: 0-3=Move, 4-5=Consume, 6-8=Tax(Pay/Partial/Evade)
+   Death penalty: -100
+   Audit frequency: every 50 ticks (synchronized with NetLogo)
+   Temporal awareness: Agents know position in 50-tick audit cycle
+
+============================================================
+Episode 1/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 2/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 3/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 4/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 5/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 6/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 7/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 8/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 9/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 10/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 11/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 12/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 13/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 14/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 15/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 16/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 17/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 18/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 19/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 20/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 21/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 22/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 23/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 24/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 25/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 26/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 27/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 28/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 29/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 30/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 31/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 32/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 33/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 34/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 35/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 36/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 37/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 38/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 39/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 40/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 41/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 42/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 43/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 44/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 45/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 46/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 47/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 48/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 49/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 50/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 51/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 52/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 53/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 54/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 55/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 56/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 57/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 58/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 59/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 60/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 61/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 62/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 63/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 64/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 65/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 66/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 67/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 68/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 69/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 70/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 71/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 72/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 73/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 74/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 75/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 76/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 77/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 78/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 79/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 80/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 81/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 82/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 83/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 84/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 85/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 86/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 87/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 88/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 89/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 90/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 91/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 92/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 93/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 94/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 95/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 96/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 97/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 98/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 99/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 100/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.5, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+Saving final models...
+
+============================================================
+EXPERIMENT 'dqn_strict_medium_audit_high_duration' COMPLETE
+============================================================
+Total time: 0.0 minutes (0.00 hours)
+Episodes completed: 0
+Final learning parameters:
+    - Epsilon: 0.658225
+    - Memory: 10,000 experiences
+    - Network updates: 418
+   Experiment 'dqn_strict_medium_audit_high_duration' complete
+
+Experiment 4/4: dqn_strict_high_audit_high_duration
+
+Starting DQN experiment: dqn_strict_high_audit_high_duration
+   Parameters: audit=0.8, mode=strict, duration=50
+   Neural Network: 9 inputs (9 features) -> 9 outputs
+   State features: sugar, health, x, y, punishment, last 3 tax decisions, audit phase
+   Action Space: 0-3=Move, 4-5=Consume, 6-8=Tax(Pay/Partial/Evade)
+   Death penalty: -100
+   Audit frequency: every 50 ticks (synchronized with NetLogo)
+   Temporal awareness: Agents know position in 50-tick audit cycle
+
+============================================================
+Episode 1/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 2/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 3/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 4/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 5/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 6/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 7/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 8/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 9/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 10/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 11/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 12/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 13/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 14/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 15/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 16/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 17/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 18/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 19/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 20/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 21/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 22/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 23/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 24/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 25/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 26/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 27/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 28/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 29/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 30/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 31/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 32/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 33/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 34/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 35/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 36/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 37/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 38/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 39/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 40/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 41/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 42/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 43/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 44/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 45/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 46/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 47/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 48/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 49/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 50/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 51/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 52/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 53/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 54/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 55/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 56/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 57/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 58/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 59/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 60/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 61/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 62/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 63/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 64/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 65/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 66/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 67/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 68/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 69/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 70/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 71/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 72/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 73/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 74/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 75/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 76/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 77/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 78/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 79/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 80/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 81/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 82/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 83/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 84/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 85/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 86/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 87/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 88/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 89/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 90/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 91/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 92/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 93/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 94/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 95/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 96/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 97/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 98/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 99/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+============================================================
+Episode 100/100 - Starting at 15:38:46
+============================================================
+
+Starting episode: 1000 years, audit_rate=0.8, mode=strict, duration=50
+Error during episode: Java Virtual Machine is not running
+
+Saving final models...
+
+============================================================
+EXPERIMENT 'dqn_strict_high_audit_high_duration' COMPLETE
+============================================================
+Total time: 0.0 minutes (0.00 hours)
+Episodes completed: 0
+Final learning parameters:
+    - Epsilon: 0.658225
+    - Memory: 10,000 experiences
+    - Network updates: 418
+   Experiment 'dqn_strict_high_audit_high_duration' complete
+
+============================================================
+ANALYZING DQN RESULTS
+----------------------------------------
+No results generated
+
+============================================================
+DQN SIMULATION COMPLETE
+============================================================
+Clearing TensorFlow sessions...
+TensorFlow cleanup complete
+Closing NetLogo connection...
+Warning during workspace cleanup: Java Virtual Machine is not running
+Skipping JVM shutdown (will force exit)...

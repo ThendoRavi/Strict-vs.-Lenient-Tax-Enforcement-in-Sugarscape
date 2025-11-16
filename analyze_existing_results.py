@@ -12,7 +12,7 @@ def load_all_results(results_dir='results', mode_filter=None):
         results_dir: Directory containing CSV files
         mode_filter: 'strict', 'lenient', or None for all
     """
-    csv_files = glob.glob(os.path.join(results_dir, '*_results.csv'))
+    csv_files = glob.glob(os.path.join(results_dir, 'dqn_experiment_summary.csv'))
     
     if not csv_files:
         print(f"No CSV files found in {results_dir}")

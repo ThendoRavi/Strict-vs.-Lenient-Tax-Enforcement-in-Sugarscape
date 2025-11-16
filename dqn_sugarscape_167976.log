@@ -1,0 +1,26 @@
+Environment variables set:
+  JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Xmx4g
+  DISPLAY=
+  MPLBACKEND=Agg
+Starting DQN run at Sun Nov 16 03:35:13 PM SAST 2025
+============================================================
+DQN Sugarscape Results Analysis
+============================================================
+Found 1 result files:
+  - dqn_experiment_summary.csv
+
+Available columns: ['experiment', 'year', 'gini', 'compliance_rate', 'evasion_rate', 'partial_payment_rate', 'total_sugar', 'population', 'epsilon', 'deaths']
+
+Filtered from 4000 to 2000 data points (experiments containing 'strict')
+
+Total data points loaded: 2000
+Experiments: ['dqn_strict_high_audit_high_duration', 'dqn_strict_medium_audit_high_duration']
+
+Analyzing 2000 total data points...
+
+✅ Generated: analysis_output/dqn_main_results_strict.png
+
+✅ Analysis complete!
+Analyzed 2000 data points
+Generated visualizations in 'analysis_output/' directory
+Job done DQN run completed at Sun Nov 16 03:35:16 PM SAST 2025

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'mode'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/analyze_existing_results.py", line 177, in <module>
+    results = load_all_results('results', mode_filter=MODE_FILTER)
+  File "/home-mscluster/travhengani/Strict-vs.-Lenient-Tax-Enforcement-in-Sugarscape/analyze_existing_results.py", line 36, in load_all_results
+    combined_df = combined_df[combined_df['mode'] == mode_filter]
+                              ~~~~~~~~~~~^^^^^^^^
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home-mscluster/travhengani/miniconda3/lib/python3.13/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'mode'

@@ -1,0 +1,11 @@
+Environment variables set:
+  JAVA_TOOL_OPTIONS=-Djava.awt.headless=true -Xmx4g
+  DISPLAY=
+  MPLBACKEND=Agg
+Starting DQN run at Sun Nov 16 03:23:49 PM SAST 2025
+============================================================
+DQN Sugarscape Results Analysis
+============================================================
+No CSV files found in results
+❌ No results found to analyze
+Job done DQN run completed at Sun Nov 16 03:24:02 PM SAST 2025

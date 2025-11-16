@@ -182,7 +182,7 @@ if __name__ == "__main__":
     print("=" * 60)
     
     # Choose mode: 'strict', 'lenient', or None for all
-    MODE_FILTER = 'lenient'  # Change this to 'lenient' or None
+    MODE_FILTER = 'strict'  # Change this to 'lenient' or None
     
     # Load results from CSV files with filter
     results = load_all_results('results', mode_filter=MODE_FILTER)

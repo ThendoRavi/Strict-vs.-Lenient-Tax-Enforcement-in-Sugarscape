@@ -30,11 +30,14 @@ def load_all_results(results_dir='results', mode_filter=None):
     
     combined_df = pd.concat(all_data, ignore_index=True)
     
+    print(f"\nAvailable columns: {combined_df.columns.tolist()}")
+    
     # Apply mode filter if specified
     if mode_filter:
+        # Filter by experiment name containing 'strict' or 'lenient'
         original_count = len(combined_df)
-        combined_df = combined_df[combined_df['mode'] == mode_filter]
-        print(f"\nFiltered from {original_count} to {len(combined_df)} data points (mode={mode_filter})")
+        combined_df = combined_df[combined_df['experiment'].str.contains(mode_filter, case=False)]
+        print(f"\nFiltered from {original_count} to {len(combined_df)} data points (experiments containing '{mode_filter}')")
     
     print(f"\nTotal data points loaded: {len(combined_df)}")
     print(f"Experiments: {combined_df['experiment'].unique().tolist()}")
@@ -75,11 +78,19 @@ def analyze_dqn_results(results, output_suffix=''):
     # Create output directory if it doesn't exist
     os.makedirs('analysis_output', exist_ok=True)
     
+    # Determine mode label from experiment names
+    first_exp = df['experiment'].iloc[0]
+    if 'strict' in first_exp.lower():
+        mode_label = 'Strict'
+    elif 'lenient' in first_exp.lower():
+        mode_label = 'Lenient'
+    else:
+        mode_label = 'All'
+    
     # ==========================================
     # MAIN SUMMARY PLOT
     # ==========================================
     fig, axes = plt.subplots(4, 2, figsize=(15, 20))
-    mode_label = df['mode'].iloc[0].capitalize() if 'mode' in df.columns else 'All'
     fig.suptitle(f'DQN Tax Enforcement Experiment Results - {mode_label} Mode', 
                  fontsize=16, fontweight='bold')
     
@@ -171,7 +182,7 @@ if __name__ == "__main__":
     print("=" * 60)
     
     # Choose mode: 'strict', 'lenient', or None for all
-    MODE_FILTER = 'strict'  # Change this to 'lenient' or None
+    MODE_FILTER = 'lenient'  # Change this to 'lenient' or None
     
     # Load results from CSV files with filter
     results = load_all_results('results', mode_filter=MODE_FILTER)
